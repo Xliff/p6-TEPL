@@ -73,7 +73,7 @@ class TEPL::Encoding {
     tepl_encoding_get_all();
   }
 
-  method get_charset
+  method get_charset (:$raw)
     is also<
       get-charset
       charset
@@ -81,10 +81,11 @@ class TEPL::Encoding {
   {
     my $l = GTK::Compat::GSList.new( tepl_encoding_get_charset($!tb) )
       but ListData[TeplEncoding];
-    $l.Array.map({ TEPL::Encoding.new($_) });
+    $raw ??
+      $l.Array !! $l.Array.map({ TEPL::Encoding.new($_) });
   }
 
-  method get_default_candidates
+  method get_default_candidates (:$raw)
     is also<
       get-default-candidates
       default_candidates
@@ -94,7 +95,8 @@ class TEPL::Encoding {
     my $l = GTK::Compat::GSList.new(
       tepl_encoding_get_default_candidates()
     ) but ListData[TeplEncoding];
-    $l.Array.map({ TEPL::Encoding.new($_) });
+    $raw ??
+      $l.Array !! $l.Array.map({ TEPL::Encoding.new($_) });
   }
 
   method get_name
