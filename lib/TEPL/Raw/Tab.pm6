@@ -3,6 +3,7 @@ use v6.c;
 use NativeCall;
 
 use GTK::Compat::Types;
+use GTK::Raw::Types;
 use TEPL::Raw::Types;
 
 unit package TEPL::Raw::Tabs;
@@ -49,7 +50,7 @@ sub tepl_tab_new_with_view (TeplView $view)
 
 sub tepl_tab_save_as_async (
   TeplTab $tab,
-  &callback(Pointer, GAsyncResult, Pointer),
+  &callback (Pointer, GAsyncResult, Pointer),
   gpointer $user_data
 )
   is native(tepl)
@@ -69,7 +70,7 @@ sub tepl_tab_save_as_finish (TeplTab $tab, GAsyncResult $result)
 
 sub tepl_tab_save_async (
   TeplTab $tab,
-  &callback(Pointer, GAsyncResult, Pointer),
+  &callback (Pointer, GAsyncResult, Pointer),
   gpointer $user_data
 )
   is native(tepl)

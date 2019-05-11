@@ -1,6 +1,9 @@
 use v6.c;
 
+use Method::Also;
+
 use GTK::Compat::Types;
+use GTK::Raw::Types;
 use TEPL::Raw::Types;
 
 use TEPL::Raw::TabLabel;
@@ -8,10 +11,12 @@ use TEPL::Raw::TabLabel;
 use GTK::Grid;
 use TEPL::Tab;
 
-our TeplTabLabelAncestry is export
+our subset TeplTabLabelAncestry is export
   where TeplTabLabel | GridAncestry;
 
-class TEPL::TabLabel is also GTK::Grid {
+subset TabOrObject of Mu where Tepl::Tab | TeplTab;
+
+class TEPL::TabLabel is GTK::Grid {
   has TeplTabLabel $!ttl;
 
   method bless(*%attrinit) {
@@ -31,7 +36,7 @@ class TEPL::TabLabel is also GTK::Grid {
           }
           default {
             $to-parent = $_;
-            cast(TeplTabLabel, $_;
+            cast(TeplTabLabel, $_);
           }
         };
         self.setGrid($to-parent);
@@ -51,8 +56,9 @@ class TEPL::TabLabel is also GTK::Grid {
     my $o = self.bless(:$tablabel);
     $o.upref;
   }
-  multi method new {
-    self.bless( tablabel => tepl_tab_label_new() );
+  multi method new (TabOrObject $tab is copy) {
+    $tab .= Tab if $tab ~~ Tepl::Tab;
+    self.bless( tablabel => tepl_tab_label_new($tab) );
   }
 
   method get_tab

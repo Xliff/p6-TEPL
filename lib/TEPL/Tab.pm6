@@ -1,5 +1,7 @@
 use v6.c;
 
+use Method::Also;
+
 use GTK::Compat::Types;
 use GTK::Raw::Types;
 use TEPL::Raw::Types;
@@ -13,10 +15,10 @@ use TEPL::View;
 use GTK::Roles::Signals::Generic;
 use TEPL::Roles::TabGroup;
 
-our TeplTabAncestry is export
-  where TeplTabl | TeplTabGroup | GridAncestry;
+our subset TeplTabAncestry is export
+  where TeplTab | TeplTabGroup | GridAncestry;
 
-class TEPL::TabLabel is also GTK::Grid {
+class TEPL::Tab is GTK::Grid {
   also does GTK::Roles::Signals::Generic;
   also does TEPL::Roles::TabGroup;
 
@@ -58,76 +60,88 @@ class TEPL::TabLabel is also GTK::Grid {
   }
 
   method TEPL::Raw::TeplTab
-    #is also<TeplTab>
+    is also<
+      TeplTab
+      Tab
+    >
   { $!tt }
-
-  # Is originally:
-  # TeplTab, gpointer --> void
-  method close-request {
-    self.connect($!tt, 'close-request');
-  }
 
   multi method new (TeplTabAncestry $tab) {
     my $o = self.bless(:$tab);
     $o.upref;
   }
-  method new {
+  multi method new {
     self.bless( tab => tepl_tab_new() );
   }
 
-  method new_with_view (TeplView() $view) {
+  method new_with_view (TeplView() $view) is also<new-with-view> {
     self.bless( tab => tepl_tab_new_with_view($view) );
   }
 
-  method add_info_bar (GtkInfoBar() $info_bar) {
-    tepl_tab_add_info_bar($!ttl, $info_bar);
+  # Is originally:
+  # TeplTab, gpointer --> void
+  method close-request is also<close_request> {
+    self.connect($!tt, 'close-request');
   }
 
-  method get_buffer {
-    TEPL::Buffer.new( tepl_tab_get_buffer($!ttl) );
+  method add_info_bar (GtkInfoBar() $info_bar) is also<add-info-bar> {
+    tepl_tab_add_info_bar($!tt, $info_bar);
   }
 
-  method get_type {
+  method get_buffer
+    is also<
+      get-buffer
+      buffer
+    >
+  {
+    TEPL::Buffer.new( tepl_tab_get_buffer($!tt) );
+  }
+
+  method get_type is also<get-type> {
     state ($n, $t);
-    unstable_get_type( self.^name. &tepl_tab_get_type, $n, $t );
+    unstable_get_type( self.^name, &tepl_tab_get_type, $n, $t );
   }
 
-  method get_view {
-    TEPL::View.new( tepl_tab_get_view($!ttl) );
+  method get_view is also<get-view> {
+    TEPL::View.new( tepl_tab_get_view($!tt) );
   }
 
-  method load_file (GFile() $location) {
-    tepl_tab_load_file($!ttl, $location);
+  method load_file (GFile() $location) is also<load-file> {
+    tepl_tab_load_file($!tt, $location);
   }
 
   method save_as_async (
     &callback,
-    gpointer $user_data = Pointer
-  ) {
-    tepl_tab_save_as_async($!ttl, &callback, $user_data);
+    gpointer $user_data = gpointer
+  )
+    is also<save-as-async>
+  {
+    tepl_tab_save_as_async($!tt, &callback, $user_data);
   }
 
-  method save_as_async_simple {
-    tepl_tab_save_as_async_simple($!ttl);
+  method save_as_async_simple is also<save-as-async-simple> {
+    tepl_tab_save_as_async_simple($!tt);
   }
 
-  method save_as_finish (GAsyncResult $result) {
-    so tepl_tab_save_as_finish($!ttl, $result);
+  method save_as_finish (GAsyncResult() $result) is also<save-as-finish> {
+    so tepl_tab_save_as_finish($!tt, $result);
   }
 
   method save_async (
     &callback,
-    gpointer $user_data = Pointer
-  ) {
-    tepl_tab_save_async($!ttl, &callback, $user_data);
+    gpointer $user_data = gpointer
+  )
+    is also<save-async>
+  {
+    tepl_tab_save_async($!tt, &callback, $user_data);
   }
 
-  method save_async_simple {
-    tepl_tab_save_async_simple($!ttl);
+  method save_async_simple is also<save-async-simple> {
+    tepl_tab_save_async_simple($!tt);
   }
 
-  method save_finish (GAsyncResult $result) {
-    so tepl_tab_save_finish($!ttl, $result);
+  method save_finish (GAsyncResult() $result) is also<save-finish> {
+    so tepl_tab_save_finish($!tt, $result);
   }
 
 }

@@ -4,6 +4,7 @@ use NativeCall;
 
 use GTK::Compat::Types;
 use GTK::Raw::Types;
+use AMTK::Raw::Types;
 use TEPL::Raw::Types;
 
 unit package TEPL::Raw::Application;
@@ -46,7 +47,7 @@ sub tepl_application_get_from_gtk_application (
   is export
   { * }
 
-sub tepl_application_get_tepl_action_info_store ( 
+sub tepl_application_get_tepl_action_info_store (
   TeplApplication $tepl_app
 )
   returns AmtkActionInfoStore
@@ -71,7 +72,7 @@ sub tepl_application_handle_open (TeplApplication $tepl_app)
   { * }
 
 sub tepl_application_open_simple (
-  TeplApplication $tepl_app, 
+  TeplApplication $tepl_app,
   GFile $file
 )
   is native(tepl)

@@ -72,7 +72,7 @@ sub tepl_file_check_file_on_disk (TeplFile $file)
   { * }
 
 sub tepl_file_get_compression_type (TeplFile $file)
-  returns TeplCompressionType
+  returns uint32 # TeplCompressionType
   is native(tepl)
   is export
   { * }
@@ -96,7 +96,7 @@ sub tepl_file_get_location (TeplFile $file)
   { * }
 
 sub tepl_file_get_newline_type (TeplFile $file)
-  returns TeplNewlineType
+  returns uint32 # TeplNewlineType
   is native(tepl)
   is export
   { * }

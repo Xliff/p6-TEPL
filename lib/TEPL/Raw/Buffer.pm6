@@ -33,7 +33,7 @@ sub tepl_buffer_get_full_title (TeplBuffer $buffer)
   { * }
 
 sub tepl_buffer_get_selection_type (TeplBuffer $buffer)
-  returns TeplSelectionType
+  returns uint32 # TeplSelectionType
   is native(tepl)
   is export
   { * }

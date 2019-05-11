@@ -47,8 +47,8 @@ sub tepl_application_window_is_main_window (
   { * }
 
 sub tepl_application_window_open_file (
-  TeplApplicationWindow $tepl_window, 
-  GFile $location, 
+  TeplApplicationWindow $tepl_window,
+  GFile $location,
   gboolean $jump_to
 )
   is native(tepl)
@@ -56,7 +56,7 @@ sub tepl_application_window_open_file (
   { * }
 
 sub tepl_application_window_set_tab_group (
-  TeplApplicationWindow $tepl_window, 
+  TeplApplicationWindow $tepl_window,
   TeplTabGroup $tab_group
 )
   is native(tepl)
@@ -72,7 +72,7 @@ sub tepl_application_window_get_handle_title (
   { * }
 
 sub tepl_application_window_set_handle_title (
-  TeplApplicationWindow $tepl_window, 
+  TeplApplicationWindow $tepl_window,
   gboolean $handle_title
 )
   is native(tepl)

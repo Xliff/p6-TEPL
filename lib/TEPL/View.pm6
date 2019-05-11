@@ -1,5 +1,7 @@
 use v6.c;
 
+use Method::Also;
+
 use GTK::Compat::Types;
 use SourceViewGTK::Raw::Types;
 use TEPL::Raw::Types;
@@ -8,7 +10,7 @@ use TEPL::Raw::View;
 
 use SourceViewGTK::View;
 
-our TeplViewAncestry is export
+our subset TeplViewAncestry is export
   where TeplView | SourceViewAncestry;
 
 class TEPL::View is SourceViewGTK::View {
@@ -91,6 +93,5 @@ class TEPL::View is SourceViewGTK::View {
     my gint ($sl, $el) = self.RESOLVE-INT($start_line, $end_line);
     tepl_view_select_lines($!tv, $sl, $el);
   }
-
 
 }

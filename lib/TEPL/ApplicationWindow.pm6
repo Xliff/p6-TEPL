@@ -6,25 +6,27 @@ use TEPL::Raw::Types;
 
 use GTK::Raw::Utils;
 
+use TEPL::Raw::ApplicationWindow;
+
 use GTK::Compat::Roles::Object;
 
-#use GTK::ApplicationWindow;
+use GTK::ApplicationWindow;
 use GTK::WindowGroup;
 
 class TEPL::ApplicationWindow {
   also does GTK::Compat::Roles::Object;
-  
+
   has TeplApplicationWindow $!taw;
-  
+
   submethod BUILD (:$window) {
     self!setObject($!taw = $window);
   }
-  
+
   multi method new (TeplApplicationWindow $window) {
     my $o = self.bless(:$window);
     $o.upref;
   }
-  
+
   method handle_title is rw {
     Proxy.new(
       FETCH => sub ($) {
@@ -37,16 +39,18 @@ class TEPL::ApplicationWindow {
     );
   }
 
-  
+
   method get_application_window {
-    #GTK::ApplicationWindow.new(
+    GTK::ApplicationWindow.new(
       tepl_application_window_get_application_window($!taw)
-    #);
+    );
   }
 
   method get_from_gtk_application_window {
-    self.bless( 
-      window => tepl_application_window_get_from_gtk_application_window($!taw)
+    self.bless(
+      window => tepl_application_window_get_from_gtk_application_window(
+        cast(GtkApplicationWindow, $!taw)
+      )
     );
   }
 
@@ -60,7 +64,9 @@ class TEPL::ApplicationWindow {
   }
 
   method is_main_window {
-    so tepl_application_window_is_main_window($!taw);
+    so tepl_application_window_is_main_window(
+      cast(GtkApplicationWindow, $!taw)
+    );
   }
 
   method open_file (GFile() $location, Int() $jump_to) {
@@ -73,4 +79,3 @@ class TEPL::ApplicationWindow {
   }
 
 }
-  

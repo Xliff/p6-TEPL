@@ -8,20 +8,20 @@ use TEPL::Raw::Application;
 
 use GTK::Compat::Roles::Object;
 
-#use GTK::ApplicationWindow;
-#use AMTK::ActionInfoStore;
+use GTK::ApplicationWindow;
+use AMTK;
 
 class TEPL::Application {
   also does GTK::Compat::Roles::Object;
-  
+
   has TeplApplication $!ta;
-  
+
   submethod BUILD (:$app) {
     self!setObject($!ta = $app);
   }
-  
+
   method get_default {
-    self.bless( app => tepl_application_get_default($!ta) );
+    self.bless( app => tepl_application_get_default() );
   }
 
   method get_from_gtk_application (GtkApplication() $app) {
@@ -29,17 +29,17 @@ class TEPL::Application {
       app => tepl_application_get_from_gtk_application($app)
     );
   }
-  
+
   method get_active_main_window {
-    #GTK::ApplicationWindow.new(
+    GTK::ApplicationWindow.new(
       tepl_application_get_active_main_window($!ta)
-    #)
+    )
   }
 
   method get_app_action_info_store {
-    #AMTK::ActionInfoStore.new(
+    AMTK::ActionInfoStore.new(
       tepl_application_get_app_action_info_store($!ta);
-    #);
+    );
   }
 
   method get_application {
@@ -49,14 +49,14 @@ class TEPL::Application {
   }
 
   method get_tepl_action_info_store {
-    #AMTK::ActionInfoStore.new(
+    AMTK::ActionInfoStore.new(
       tepl_application_get_tepl_action_info_store($!ta)
-    #);
+    );
   }
 
   method get_type {
     state ($n, $t);
-    unstable_get_tyoe( self.^name, &tepl_application_get_type, $n, $t );
+    unstable_get_type( self.^name, &tepl_application_get_type, $n, $t );
   }
 
   method handle_activate {
@@ -72,5 +72,3 @@ class TEPL::Application {
   }
 
 }
-  
-  

@@ -5,6 +5,8 @@ use Method::Also;
 use GTK::Compat::Types;
 use TEPL::Raw::Types;
 
+use GTK::Compat::Roles::ListData;
+
 use TEPL::Raw::Encoding;
 
 # BOXED TYPE
@@ -22,25 +24,26 @@ class TEPL::Encoding {
     self.bless(:$encoding);
   }
   multi method new(
+    :$charset,
     :$locale,
     :$utf8
   ) {
-    die ':locale and :utf8 options cannot be used at the same time!'
-      if $locale.defined && $utf8.defined;
+    die ':charset, :locale and :utf8 options cannot be used at the same time!'
+      if [&&]($charset.defined, $locale.defined, $utf8.defined);
 
     $locale ??
       self.new_from_locale !!
       $utf8 ??
         self.new_utf8 !!
-        self.bless( encoding => tepl_encoding_new() );
+        self.bless( encoding => tepl_encoding_new($charset) );
   }
 
   method new_from_locale is also<new-from-locale> {
-    self.bless( encoding => tepl_encoding_new_from_locale($!tb) );
+    self.bless( encoding => tepl_encoding_new_from_locale() );
   }
 
   method new_utf8 is also<new-utf8> {
-    self.bless( encoding => tepl_encoding_new_utf8($!tb) );
+    self.bless( encoding => tepl_encoding_new_utf8() );
   }
 
   method to_string
@@ -49,19 +52,19 @@ class TEPL::Encoding {
       Str
     >
   {
-    tepl_encoding_to_string($!tb);
+    tepl_encoding_to_string($!te);
   }
 
   method copy {
-    self.bless( encoding => tepl_encoding_copy($!tb) );
+    self.bless( encoding => tepl_encoding_copy($!te) );
   }
 
   method equals (TeplEncoding $enc2) {
-    so tepl_encoding_equals($!tb, $enc2);
+    so tepl_encoding_equals($!te, $enc2);
   }
 
   method free {
-    tepl_encoding_free($!tb);
+    tepl_encoding_free($!te);
   }
 
   method get_all
@@ -79,8 +82,8 @@ class TEPL::Encoding {
       charset
     >
   {
-    my $l = GTK::Compat::GSList.new( tepl_encoding_get_charset($!tb) )
-      but ListData[TeplEncoding];
+    my $l = GTK::Compat::GSList.new( tepl_encoding_get_charset($!te) )
+      but GTK::Compat::Roles::ListData[TeplEncoding];
     $raw ??
       $l.Array !! $l.Array.map({ TEPL::Encoding.new($_) });
   }
@@ -94,7 +97,7 @@ class TEPL::Encoding {
   {
     my $l = GTK::Compat::GSList.new(
       tepl_encoding_get_default_candidates()
-    ) but ListData[TeplEncoding];
+    ) but GTK::Compat::Roles::ListData[TeplEncoding];
     $raw ??
       $l.Array !! $l.Array.map({ TEPL::Encoding.new($_) });
   }
@@ -105,7 +108,7 @@ class TEPL::Encoding {
       name
     >
   {
-    tepl_encoding_get_name($!tb);
+    tepl_encoding_get_name($!te);
   }
 
   method get_type is also<get-type> {
@@ -114,12 +117,12 @@ class TEPL::Encoding {
   }
 
   method is_utf8 is also<is-utf8> {
-    tepl_encoding_is_utf8($!tb);
+    tepl_encoding_is_utf8($!te);
   }
 
 }
 
-sub infix:<=:=> (TEPL::Encoding $a, TEPL::Encoding) $b is export {
+sub infix:<=:=> (TEPL::Encoding $a, TEPL::Encoding $b) is export {
   $a.TeplEncoding.p == $b.TeplEncoding.p
 }
 sub infix:<eqv> (TeplEncoding $a, TeplEncoding $b) is export {

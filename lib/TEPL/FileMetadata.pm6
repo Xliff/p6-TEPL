@@ -1,11 +1,16 @@
 use v6.c;
 
+use Method::Also;
+use NativeCall;
+
 use GTK::Compat::Types;
 use TEPL::Raw::Types;
 
+use GTK::Raw::Utils;
+
 use TEPL::Raw::FileMetadata;
 
-use GTK::Compat::Roles::Object
+use GTK::Compat::Roles::Object;
 
 class TEPL::FileMetadata {
   also does GTK::Compat::Roles::Object;
@@ -16,21 +21,29 @@ class TEPL::FileMetadata {
     self!setObject($!tfm = $metadata);
   }
 
-  method TEPL::Raw::Types::TeplFileMetadata { $!tfm }
+  method TEPL::Raw::Types::TeplFileMetadata
+    is also<
+      TeplFileMetadata
+      FileMetadata
+    >
+  { $!tfm }
 
   multi method new (TeplFileMetadata $metadata) {
     self.bless(:$metadata);
   }
-  method new {
-    self.bless( metadata => tepl_file_metadata_new() );
+  multi method new (::('TEPL::File') $file) {
+    samewith($file.File);
+  }
+  multi method new (TeplFile $file) {
+    self.bless( metadata => tepl_file_metadata_new($file) );
   }
 
   method get (Str() $key) {
-    tepl_file_metadata_get($!tb, $key);
+    tepl_file_metadata_get($!tfm, $key);
   }
 
-  method get_file {
-    ::('TEPL::File').new(tepl_file_metadata_get_file($!tb) );
+  method get_file is also<get-file> {
+    ::('TEPL::File').new(tepl_file_metadata_get_file($!tfm) );
   }
 
   method load (
@@ -38,7 +51,7 @@ class TEPL::FileMetadata {
     CArray[Pointer[GError]] $error = gerror()
   ) {
     clear_error;
-    my $rc = so tepl_file_metadata_load($!tb, $cancellable, $error);
+    my $rc = so tepl_file_metadata_load($!tfm, $cancellable, $error);
     set_error($error);
     $rc;
   }
@@ -48,13 +61,15 @@ class TEPL::FileMetadata {
     GCancellable $cancellable,
     &callback,
     gpointer $user_data = Pointer
-  ) {
+  )
+    is also<load-async>
+  {
     my gint $io = resolve-int($io_priority);
     tepl_file_metadata_load_async(
-      $!tb,
+      $!tfm,
       $io,
       $cancellable,
-      $callback,
+      &callback,
       $user_data
     );
   }
@@ -62,9 +77,11 @@ class TEPL::FileMetadata {
   method load_finish (
     GAsyncResult $result,
     CArray[Pointer[GError]] $error = gerror()
-  ) {
+  )
+    is also<load-finish>
+  {
     clear_error;
-    my $rc = tepl_file_metadata_load_finish($!tb, $result, $error);
+    my $rc = tepl_file_metadata_load_finish($!tfm, $result, $error);
     set_error($error);
     $rc;
   }
@@ -75,7 +92,7 @@ class TEPL::FileMetadata {
     CArray[Pointer[GError]] $error = gerror()
   ) {
     clear_error;
-    my $rc = tepl_file_metadata_save($!tb, $cancellable, $error);
+    my $rc = tepl_file_metadata_save($!tfm, $cancellable, $error);
     set_error($error);
     $rc;
   }
@@ -85,10 +102,12 @@ class TEPL::FileMetadata {
     GCancellable $cancellable,
     &callback,
     gpointer $user_data = Pointer
-  ) {
+  )
+    is also<save-async>
+  {
     my gint $io = resolve-int($io_priority);
     tepl_file_metadata_save_async(
-      $!tb,
+      $!tfm,
       $io,
       $cancellable,
       &callback,
@@ -99,15 +118,17 @@ class TEPL::FileMetadata {
   method save_finish (
     GAsyncResult $result,
     CArray[Pointer[GError]] $error = gerror()
-  ) {
+  )
+    is also<save-finish>
+  {
     clear_error;
-    my $rc = tepl_file_metadata_save_finish($!tb, $result, $error);
+    my $rc = tepl_file_metadata_save_finish($!tfm, $result, $error);
     set_error($error);
     $rc;
   }
 
   method set (Str() $key, Str() $value) {
-    tepl_file_metadata_set($!tb, $key, $value);
+    tepl_file_metadata_set($!tfm, $key, $value);
   }
 
 }

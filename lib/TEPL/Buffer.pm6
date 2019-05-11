@@ -12,7 +12,7 @@ use SourceViewGTK::Buffer;
 
 use TEPL::File;
 
-our TeplBufferAncestry is export
+our subset TeplBufferAncestry is export
   where TeplBuffer | SourceBufferAncestry;
 
 class TEPL::Buffer is SourceViewGTK::Buffer {
@@ -25,7 +25,7 @@ class TEPL::Buffer is SourceViewGTK::Buffer {
   }
 
   submethod BUILD (:$buffer) {
-    given $view {
+    given $buffer {
       when TeplBufferAncestry {
         my $to-parent;
         $!tb = do {
@@ -40,7 +40,7 @@ class TEPL::Buffer is SourceViewGTK::Buffer {
         }
         self.setSourceBuffer($to-parent);
       }
-      when SourceViewGTK::View {
+      when SourceViewGTK::Buffer {
       }
       default {
       }
@@ -53,7 +53,7 @@ class TEPL::Buffer is SourceViewGTK::Buffer {
     my $o = self.bless($buffer);
     $o.upref;
   }
-  method new {
+  multi method new {
     self.bless( buffer => tepl_buffer_new() );
   }
 
