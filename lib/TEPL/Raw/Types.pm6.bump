@@ -9,7 +9,7 @@ unit package TEPL::Raw::Types;
 constant tepl is export = 'tepl-4',v0;
 
 # Number of times a full project compilation has had to be forced.
-constant forced = 0;
+constant forced = 2;
 
 class TeplAbstractFactory     is repr("CPointer") does GTK::Roles::Pointers is export { }
 class TeplApplication         is repr("CPointer") does GTK::Roles::Pointers is export { }

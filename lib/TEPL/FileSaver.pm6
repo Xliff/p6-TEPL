@@ -1,6 +1,7 @@
-use v6.vc;
+use v6.c;
 
 use Method::Also;
+use NativeCall;
 
 use GTK::Compat::Types;
 use TEPL::Raw::Types;
@@ -28,15 +29,23 @@ class TEPL::FileSaver {
     >
   { $!fs }
 
-  method new (TeplFile() $file) {
-    self.bless( saver => tepl_file_saver_new($!fs, $file) );
+  method new (TeplBuffer() $buffer, TeplFile() $file) {
+    self.bless( saver => tepl_file_saver_new($buffer, $file) );
   }
 
-  method new_with_target (TeplFile() $file, GFile() $target_location)
+  method new_with_target (
+    TeplBuffer() $buffer,
+    TeplFile() $file,
+    GFile() $target_location
+  )
     is also<new-with-target>
   {
     self.bless(
-      saver => tepl_file_saver_new_with_target($!fs, $file, $target_location)
+      saver => tepl_file_saver_new_with_target(
+        $buffer,
+        $file,
+        $target_location
+      )
     );
   }
 
@@ -65,7 +74,7 @@ class TEPL::FileSaver {
   }
 
   method error_quark is also<error-quark> {
-    tepl_file_saver_error_quark($!fs);
+    tepl_file_saver_error_quark();
   }
 
   method get_buffer
@@ -148,9 +157,7 @@ class TEPL::FileSaver {
     GDestroyNotify        $progress_callback_notify,
                           &callback,
     gpointer              $user_data
-  )
-    is also<save-async>
-  {
+  ) {
     my gint $io = resolve-int($io_priority);
     tepl_file_saver_save_async(
       $!fs,
@@ -167,9 +174,7 @@ class TEPL::FileSaver {
   method save_finish (
     GAsyncResult()          $result,
     CArray[Pointer[GError]] $error = gerror()
-  )
-    is also<save-finish>
-  {
+  ) {
     clear_error;
     my $rc = tepl_file_saver_save_finish($!fs, $result, $error);
     set_error($error);

@@ -1,5 +1,7 @@
 use v6.c;
 
+use Method::Also;
+
 use GTK::Compat::Types;
 use GTK::Raw::Types;
 use TEPL::Raw::Types;
@@ -53,7 +55,12 @@ class TEPL::Notebook is GTK::Notebook {
     }
   }
 
-  method TEPL::Raw::Types::Notebook { $!tn }
+  method TEPL::Raw::Types::Notebook
+    is also<
+      TeplNotebook
+      Notebook
+    >
+  { $!tn }
 
   multi method notebook(TeplNotebookAncestry $notebook) {
     my $o = self.bless(:$notebook);
@@ -63,7 +70,7 @@ class TEPL::Notebook is GTK::Notebook {
     self.bless( notebook => tepl_notebook_new() );
   }
 
-  method get_type {
+  method get_type is also<get-type> {
     state ($n, $t);
     unstable_get_type( self.^name, &tepl_notebook_get_type, $n, $t );
   }
