@@ -1,4 +1,7 @@
 *.bak
 scripts
 scripts.old/
+LastBuildResults
+LastBuildResults.*
+.precomp
 

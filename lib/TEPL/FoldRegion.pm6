@@ -32,9 +32,9 @@ class TEPL::FoldRegion {
     IterOrObject $start    is copy,
     IterOrObject $end      is copy
   ) {
-    $buffer .= Buffer   if $buffer ~~ GTK::TextBuffer;
-    $start  .= TextIter if $start  ~~ GTK::TextIter;
-    $end    .= TextIter if $end    ~~ GTK::TextIter;
+    $buffer .= TextBuffer if $buffer ~~ GTK::TextBuffer;
+    $start  .= TextIter   if $start  ~~ GTK::TextIter;
+    $end    .= TextIter   if $end    ~~ GTK::TextIter;
     self.bless( region => tepl_fold_region_new($buffer, $start, $end) );
   }
 
