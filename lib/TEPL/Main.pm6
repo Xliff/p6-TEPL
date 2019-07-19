@@ -1,5 +1,7 @@
 use v6.c;
 
+use Method::Also;
+
 use TEPL::Raw::Types;
 
 use NativeCall;
