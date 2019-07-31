@@ -21,6 +21,7 @@ SourceViewGTK::Raw::Types
 SourceViewGTK::View
 TEPL::Raw::Types
 TEPL::GutterRendererFolds
+TEPL::Main
 TEPL::MetadataManager
 TEPL::Raw::AbstractFactory
 TEPL::Raw::Application

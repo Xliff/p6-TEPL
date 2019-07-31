@@ -12,6 +12,7 @@
   "provides": {
       "TEPL::Raw::Types"             :  "lib/TEPL/Raw/Types.pm6"             ,
       "TEPL::GutterRendererFolds"    :  "lib/TEPL/GutterRendererFolds.pm6"   ,
+      "TEPL::Main"                   :  "lib/TEPL/Main.pm6"                  ,
       "TEPL::MetadataManager"        :  "lib/TEPL/MetadataManager.pm6"       ,
       "TEPL::Raw::AbstractFactory"   :  "lib/TEPL/Raw/AbstractFactory.pm6"   ,
       "TEPL::Raw::Application"       :  "lib/TEPL/Raw/Application.pm6"       ,
