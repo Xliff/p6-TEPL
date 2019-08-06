@@ -5,7 +5,8 @@
   "perl": "6.*",
   "auth": "clifton.wood@gmail.com",
   "depends": [
-    "p6-SourceViewGTK"
+    "p6-SourceViewGTK",
+    "p6-AMTK"
   ],
   "build-depends": [],
   "test-depends": [],

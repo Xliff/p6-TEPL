@@ -1,0 +1,531 @@
+Dependency Generation
+=====================
+real 1.36
+user 1.85
+sys 0.22
+ === AMTK ===
+Stage start      :   0.000
+Stage parse      :   8.803
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === AMTK::Raw::Types ===
+Stage start      :   0.000
+Stage parse      :   1.792
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Application ===
+Stage start      :   0.000
+Stage parse      :   5.932
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::ApplicationWindow ===
+Stage start      :   0.000
+Stage parse      :   5.753
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Compat::Roles::GFile ===
+Stage start      :   0.000
+Stage parse      :   2.454
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Compat::Roles::ListData ===
+Stage start      :   0.000
+Stage parse      :   2.027
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Compat::Roles::Object ===
+Stage start      :   0.000
+Stage parse      :   2.261
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Compat::Types ===
+Stage start      :   0.000
+Stage parse      :   1.996
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.013
+Stage mast       :   0.022
+Stage mbc        :   0.009
+Stage moar       :   0.000
+ === GTK::Grid ===
+Stage start      :   0.000
+Stage parse      :   5.476
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.010
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::InfoBar ===
+Stage start      :   0.000
+Stage parse      :   5.606
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Label ===
+Stage start      :   0.000
+Stage parse      :   5.217
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Notebook ===
+Stage start      :   0.000
+Stage parse      :   5.788
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Raw::Types ===
+Stage start      :   0.000
+Stage parse      :   2.175
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.011
+Stage mast       :   0.028
+Stage mbc        :   0.010
+Stage moar       :   0.000
+ === GTK::Raw::Utils ===
+Stage start      :   0.000
+Stage parse      :   2.009
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.007
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Roles::Properties ===
+Stage start      :   0.000
+Stage parse      :   2.423
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::Roles::Signals::Generic ===
+Stage start      :   0.000
+Stage parse      :   2.280
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === GTK::WindowGroup ===
+Stage start      :   0.000
+Stage parse      :   2.449
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === Method::Also ===
+Stage start      :   0.000
+Stage parse      :   1.589
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.005
+Stage mast       :   0.010
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Buffer ===
+Stage start      :   0.000
+Stage parse      :   4.704
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Types ===
+Stage start      :   0.000
+Stage parse      :   1.936
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.005
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === SourceViewGTK::View ===
+Stage start      :   0.000
+Stage parse      :   7.241
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Raw::Types ===
+Stage start      :   0.000
+Stage parse      :   4.489
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.011
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::GutterRendererFolds ===
+Stage start      :   0.000
+Stage parse      :   4.293
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Main ===
+Stage start      :   0.000
+Stage parse      :   3.982
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.008
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::MetadataManager ===
+Stage start      :   0.000
+Stage parse      :   4.134
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Raw::AbstractFactory ===
+Stage start      :   0.000
+Stage parse      :   5.034
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.005
+Stage mast       :   0.009
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::Raw::Application ===
+Stage start      :   0.000
+Stage parse      :   5.045
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.010
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Raw::ApplicationWindow ===
+Stage start      :   0.000
+Stage parse      :   4.866
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::Raw::Buffer ===
+Stage start      :   0.000
+Stage parse      :   4.307
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.010
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::Raw::Encoding ===
+Stage start      :   0.000
+Stage parse      :   4.659
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.010
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::Raw::File ===
+Stage start      :   0.000
+Stage parse      :   4.916
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.004
+Stage moar       :   0.000
+ === TEPL::Raw::FileLoader ===
+Stage start      :   0.000
+Stage parse      :   4.890
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Raw::FileMetadata ===
+Stage start      :   0.000
+Stage parse      :   4.549
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.010
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::Raw::FileSaver ===
+Stage start      :   0.000
+Stage parse      :   5.235
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.013
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::Raw::FoldRegion ===
+Stage start      :   0.000
+Stage parse      :   4.648
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::Raw::InfoBar ===
+Stage start      :   0.000
+Stage parse      :   4.873
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Raw::Notebook ===
+Stage start      :   0.000
+Stage parse      :   3.908
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.008
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Raw::Tab ===
+Stage start      :   0.000
+Stage parse      :   5.460
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Raw::TabGroup ===
+Stage start      :   0.000
+Stage parse      :   4.336
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.011
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::Raw::TabLabel ===
+Stage start      :   0.000
+Stage parse      :   4.377
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.008
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Raw::View ===
+Stage start      :   0.000
+Stage parse      :   5.107
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::Utils ===
+Stage start      :   0.000
+Stage parse      :   4.351
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::View ===
+Stage start      :   0.000
+Stage parse      :   8.466
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.008
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::AbstractFactory ===
+Stage start      :   0.000
+Stage parse      :   7.544
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.008
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Application ===
+Stage start      :   0.000
+Stage parse      :  10.711
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::ApplicationWindow ===
+Stage start      :   0.000
+Stage parse      :   7.629
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.008
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::Encoding ===
+Stage start      :   0.000
+Stage parse      :   4.432
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::FileLoader ===
+Stage start      :   0.000
+Stage parse      :   4.659
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.008
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::FileMetadata ===
+Stage start      :   0.000
+Stage parse      :   4.269
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::FileSaver ===
+Stage start      :   0.000
+Stage parse      :   5.178
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.008
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::InfoBar ===
+Stage start      :   0.000
+Stage parse      :   7.355
+Stage syntaxcheck:   0.000
+Stage ast        :   0.003
+Stage optimize   :   0.005
+Stage mast       :   0.008
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::File ===
+Stage start      :   0.000
+Stage parse      :   5.328
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Buffer ===
+Stage start      :   0.000
+Stage parse      :   7.157
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.005
+Stage mast       :   0.009
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::FoldRegion ===
+Stage start      :   0.000
+Stage parse      :   7.617
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.012
+Stage mbc        :   0.002
+Stage moar       :   0.000
+ === TEPL::Roles::TabGroup ===
+Stage start      :   0.000
+Stage parse      :   9.936
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Tab ===
+Stage start      :   0.000
+Stage parse      :  10.109
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::TabLabel ===
+Stage start      :   0.000
+Stage parse      :   9.854
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::Notebook ===
+Stage start      :   0.000
+Stage parse      :   9.857
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+real 303.15
+user 357.86
+sys 35.82
