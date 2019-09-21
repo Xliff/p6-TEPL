@@ -52,7 +52,7 @@ sub create-side-panel ($t) {
     $info-bar.add_content_widget($entry);
     $info-bar.add_close_button;
     .show for $entry, $info-bar;
-    $t.add-info-bar($info-bar);
+    $t.add-info-bar($info-bar.ref);
   });
 
   my $progress = GTK::Button.new-with-label('Progress');
@@ -74,7 +74,7 @@ sub create-side-panel ($t) {
 
   my $permission-denied = GTK::Button.new-with-label('Permission Denied');
   $permission-denied.clicked.tap({
-    my $e = GError.new($G_IO_ERROR, G_IO_ERROR_NOT_FOUND, 'blah');
+    my $e = GError.new($G_IO_ERROR, G_IO_ERROR_PERMISSION_DENIED, 'blah');
     add-loading-error-info-bar($t, $e);
   });
 

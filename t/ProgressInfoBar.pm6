@@ -185,6 +185,7 @@ class TEPL::ErrorInfoBar is TEPL::InfoBar is export {
     my gboolean $e = so $edit-anyways;
 
     self.message-type = $e ?? GTK_MESSAGE_WARNING !! GTK_MESSAGE_ERROR;
+    self.add-button('_Retry', GTK_RESPONSE_OK);
     self.add_button('Edit any _way', GTK_RESPONSE_YES) if $e;
     self.add-button('_Cancel', GTK_RESPONSE_CANCEL);
   }
@@ -207,8 +208,7 @@ class TEPL::ErrorInfoBar is TEPL::InfoBar is export {
       $loader ~~ SourceViewGTK::FileLoader;
 
     my ($location, $encoding) = ($loader.location, $loader.encoding);
-    my $displayUri = $location.defined ??
-      GTK::Compat::Roles::GFile.parse-name($location) !! 'stdin';
+    my $displayUri = $location.defined ?? $location.get-parse-name !! 'stdin';
     my ($edit-anyways, $convert-error, $primary, $secondary) = False xx 2;
 
     given $error {
@@ -225,7 +225,13 @@ class TEPL::ErrorInfoBar is TEPL::InfoBar is export {
           SEC
       }
 
-      when .matches($G_IO_ERROR, G_IO_ERROR_INVALID_DATA) {
+      when (
+        .matches($G_IO_ERROR, G_IO_ERROR_INVALID_DATA) && $encoding.defined.not,
+        .matches(
+          $GTK_SOURCE_FILE_LOADER_ERROR,
+				  GTK_SOURCE_FILE_LOADER_ERROR_ENCODING_AUTO_DETECTION_FAILED
+        )
+      ).any {
         $convert-error = True;
         $secondary = qq:to/SEC/.chomp;
           Unable to detect the character encoding.
@@ -234,25 +240,21 @@ class TEPL::ErrorInfoBar is TEPL::InfoBar is export {
           SEC
       }
 
-      when (
-        .matches($G_IO_ERROR, G_IO_ERROR_INVALID_DATA) && $encoding.defined.not,
-        .matches(
-          $GTK_SOURCE_FILE_LOADER_ERROR,
-				  GTK_SOURCE_FILE_LOADER_ERROR_ENCODING_AUTO_DETECTION_FAILED
-        )
-      ).any {
-        $convert-error = $edit-anyways = True;
-        $secondary = qq:to/SEC/.chomp;
-          The file you opened has some invalid characters. { ''
-          }If you continue editing this file you could corrupt it.
-  			  You can also choose another character encoding and try again.
-          SEC
-      }
-
       when .matches(
         $GTK_SOURCE_FILE_LOADER_ERROR,
 				GTK_SOURCE_FILE_LOADER_ERROR_CONVERSION_FALLBACK
       ) {
+        $convert-error = $edit-anyways = True;
+
+        $primary = "There was a problem opening the file “{ $displayUri }”.";
+        $secondary = qq:to/SEC/.chomp;
+The file you opened has some invalid characters. If you continue editing {''
+}this file you could corrupt it.
+You can also choose another character encoding and try again.
+SEC
+      }
+
+      when .matches($G_IO_ERROR, G_IO_ERROR_INVALID_DATA) {
         $convert-error = True;
 
         $primary = "Could not open the file “{ $displayUri
@@ -276,6 +278,7 @@ class TEPL::ErrorInfoBar is TEPL::InfoBar is export {
       self.set-io-loading-error( self.is-recoverable-error($error) );
 
     $primary = "Could not open the file “{ $displayUri }”" unless $primary;
+    self.add-primary-message($primary);
     self.add-secondary-message($secondary) if $secondary;
   }
 
