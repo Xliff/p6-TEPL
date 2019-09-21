@@ -11,7 +11,10 @@ use TEPL::Raw::InfoBar;
 use GTK::InfoBar;
 use GTK::Label;
 
-class TEPL::Infobar is GTK::InfoBar {
+our subset TeplInfoBarAncestry is export of Mu
+  where TeplInfoBar | InfoBarAncestry;
+
+class TEPL::InfoBar is GTK::InfoBar {
   has TeplInfoBar $!tib;
 
   method bless(*%attrinit) {
@@ -21,7 +24,23 @@ class TEPL::Infobar is GTK::InfoBar {
   }
 
   submethod BUILD (:$teplinfobar) {
-    self.setInfobar( cast(GtkInfoBar, $!tib = $teplinfobar) );
+    self.setTeplInfoBar($teplinfobar) if $teplinfobar;
+  }
+
+  method setTeplInfoBar (TeplInfoBarAncestry $_) {
+    my $to-parent;
+    $!tib = do {
+      when TeplInfoBar {
+        $to-parent = cast(GtkInfoBar, $_);
+        $_;
+      }
+
+      default {
+        $to-parent = $_;
+        cast(TeplInfoBar, $_);
+      }
+    }
+    self.setInfoBar($to-parent);
   }
 
   method TEPL::Raw::Types::TeplInfoBar
@@ -32,12 +51,14 @@ class TEPL::Infobar is GTK::InfoBar {
     self.bless( teplinfobar => tepl_info_bar_new() );
   }
 
-  method new_simple (Str() $primary_msg, Str() $secondary_msg)
+  method new_simple (Int() $msg_type, Str() $primary_msg, Str() $secondary_msg)
     is also<new-simple>
   {
+    my guint $mt = $msg_type;
+
     self.bless(
       teplinfobar => tepl_info_bar_new_simple(
-        $!tib, $primary_msg, $secondary_msg
+        $mt, $primary_msg, $secondary_msg
       )
     );
   }
