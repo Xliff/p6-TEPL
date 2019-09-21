@@ -9,7 +9,7 @@
     "p6-AMTK"
   ],
   "build-depends": [],
-  "test-depends": [],
+  "test-depends": [ "URI" ],
   "provides": {
       "TEPL::Raw::Types"             :  "lib/TEPL/Raw/Types.pm6"             ,
       "TEPL::GutterRendererFolds"    :  "lib/TEPL/GutterRendererFolds.pm6"   ,
