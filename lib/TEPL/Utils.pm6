@@ -9,7 +9,7 @@ use TEPL::Raw::Types;
 
 class TEPL::Utils {
 
-  method get_line_indentation(GtkTextIter() $iter) {
+  method get_line_indentation (GtkTextIter() $iter) {
     tepl_iter_get_line_indentation($iter)
   }
 
@@ -19,6 +19,7 @@ class TEPL::Utils {
 
   method new {
     warn 'TEPL::Utils is a static class and cannot be instantiated.';
+    
     TEPL::Utils;
   }
 
