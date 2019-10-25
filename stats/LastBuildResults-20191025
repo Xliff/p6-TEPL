@@ -1,0 +1,864 @@
+Dependency Generation
+=====================
+real 0.59
+user 0.92
+sys 0.06
+ === AMTK ===
+Stage start      :   0.000
+Stage parse      :   4.475
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === AMTK::Raw::Types ===
+Stage start      :   0.000
+Stage parse      :   0.835
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Application ===
+Stage start      :   0.000
+Stage parse      :   2.948
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::ApplicationWindow ===
+Stage start      :   0.000
+Stage parse      :   2.776
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Compat::Roles::GFile ===
+Stage start      :   0.000
+Stage parse      :   1.213
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Compat::Roles::ListData ===
+Stage start      :   0.000
+Stage parse      :   0.916
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Compat::Roles::Object ===
+Stage start      :   0.000
+Stage parse      :   1.057
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Compat::Types ===
+Stage start      :   0.000
+Stage parse      :   0.926
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.005
+Stage mast       :   0.016
+Stage mbc        :   0.004
+Stage moar       :   0.000
+ === GTK::Grid ===
+Stage start      :   0.000
+Stage parse      :   2.726
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::InfoBar ===
+Stage start      :   0.000
+Stage parse      :   2.710
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Label ===
+Stage start      :   0.000
+Stage parse      :   2.540
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Notebook ===
+Stage start      :   0.000
+Stage parse      :   2.835
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Raw::Types ===
+Stage start      :   0.000
+Stage parse      :   1.028
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.007
+Stage mbc        :   0.003
+Stage moar       :   0.000
+ === GTK::Raw::Utils ===
+Stage start      :   0.000
+Stage parse      :   0.924
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Roles::Properties ===
+Stage start      :   0.000
+Stage parse      :   1.191
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::Roles::Signals::Generic ===
+Stage start      :   0.000
+Stage parse      :   1.069
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === GTK::WindowGroup ===
+Stage start      :   0.000
+Stage parse      :   1.231
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === Method::Also ===
+Stage start      :   0.000
+Stage parse      :   0.714
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Buffer ===
+Stage start      :   0.000
+Stage parse      :   2.251
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === SourceViewGTK::Raw::Types ===
+Stage start      :   0.000
+Stage parse      :   0.904
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === SourceViewGTK::View ===
+Stage start      :   0.000
+Stage parse      :   3.697
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::Types ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/Types.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.515
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.008
+    Stage mast       :   0.070
+    Stage mbc        :   0.003
+Stage parse      :   2.407
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+ === TEPL::GutterRendererFolds ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/GutterRendererFolds.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.013
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.010
+    Stage mast       :   0.057
+    Stage mbc        :   0.004
+Stage parse      :   3.446
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Main ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Main.pm6
+    Stage start      :   0.000
+    Stage parse      :   0.899
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.003
+    Stage mast       :   0.036
+    Stage mbc        :   0.001
+Stage parse      :   2.135
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.005
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::MetadataManager ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/MetadataManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   0.981
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.008
+    Stage mast       :   0.047
+    Stage mbc        :   0.004
+Stage parse      :   2.196
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.006
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::AbstractFactory ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/AbstractFactory.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.987
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.010
+    Stage mast       :   0.065
+    Stage mbc        :   0.006
+Stage parse      :   3.432
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::Application ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/Application.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.997
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.042
+    Stage mast       :   0.061
+    Stage mbc        :   0.006
+Stage parse      :   3.467
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::ApplicationWindow ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/ApplicationWindow.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.535
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.058
+    Stage mbc        :   0.006
+Stage parse      :   3.962
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::Buffer ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.389
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.050
+    Stage mbc        :   0.004
+Stage parse      :   2.629
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.006
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::Encoding ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.178
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.056
+    Stage mbc        :   0.004
+Stage parse      :   3.410
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.005
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::File ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/File.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.879
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.065
+    Stage mbc        :   0.005
+Stage parse      :   3.105
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::FileLoader ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/FileLoader.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.814
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.065
+    Stage mbc        :   0.004
+Stage parse      :   3.064
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::FileMetadata ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/FileMetadata.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.572
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.059
+    Stage mbc        :   0.004
+Stage parse      :   2.801
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::FileSaver ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/FileSaver.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.060
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.089
+    Stage mbc        :   0.004
+Stage parse      :   3.318
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::FoldRegion ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/FoldRegion.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.757
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.014
+    Stage mast       :   0.056
+    Stage mbc        :   0.006
+Stage parse      :   3.190
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::InfoBar ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/InfoBar.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.595
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.060
+    Stage mbc        :   0.005
+Stage parse      :   3.010
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::Notebook ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/Notebook.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.496
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.004
+    Stage mast       :   0.045
+    Stage mbc        :   0.003
+Stage parse      :   2.684
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::Tab ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/Tab.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.460
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.065
+    Stage mbc        :   0.006
+Stage parse      :   3.885
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::TabGroup ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/TabGroup.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.610
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.056
+    Stage mbc        :   0.004
+Stage parse      :   2.885
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.005
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::TabLabel ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/TabLabel.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.219
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.055
+    Stage mbc        :   0.006
+Stage parse      :   2.614
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Raw::View ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Raw/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.757
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.038
+    Stage mast       :   0.060
+    Stage mbc        :   0.006
+Stage parse      :   3.184
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Utils ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Utils.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.021
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.050
+    Stage mbc        :   0.005
+Stage parse      :   3.495
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::View ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.972
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.009
+    Stage mast       :   0.222
+    Stage mbc        :   0.005
+Stage parse      :   8.587
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::AbstractFactory ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/AbstractFactory.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.192
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.008
+    Stage mast       :   0.170
+    Stage mbc        :   0.006
+Stage parse      :   7.588
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Application ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Application.pm6
+    Stage start      :   0.000
+    Stage parse      :  11.200
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.009
+    Stage mast       :   0.256
+    Stage mbc        :   0.007
+Stage parse      :  14.659
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::ApplicationWindow ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/ApplicationWindow.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.995
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.009
+    Stage mast       :   0.164
+    Stage mbc        :   0.006
+Stage parse      :   5.374
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Encoding ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :   1.555
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.072
+    Stage mbc        :   0.004
+Stage parse      :   2.852
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::FileLoader ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/FileLoader.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.058
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.010
+    Stage mast       :   0.071
+    Stage mbc        :   0.004
+Stage parse      :   3.459
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::FileMetadata ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/FileMetadata.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.369
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.009
+    Stage mast       :   0.066
+    Stage mbc        :   0.004
+Stage parse      :   3.724
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::FileSaver ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/FileSaver.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.008
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.079
+    Stage mbc        :   0.004
+Stage parse      :   3.034
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::InfoBar ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/InfoBar.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.275
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.009
+    Stage mast       :   0.175
+    Stage mbc        :   0.006
+Stage parse      :   9.629
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::File ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/File.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.548
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.009
+    Stage mast       :   0.085
+    Stage mbc        :   0.004
+Stage parse      :   5.031
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Buffer ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.927
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.008
+    Stage mast       :   0.153
+    Stage mbc        :   0.004
+Stage parse      :   5.962
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::FoldRegion ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/FoldRegion.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.971
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.146
+    Stage mbc        :   0.006
+Stage parse      :   5.137
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Roles::TabGroup ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Roles/TabGroup.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.811
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.008
+    Stage mast       :   0.227
+    Stage mbc        :   0.005
+Stage parse      :   8.612
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Tab ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Tab.pm6
+    Stage start      :   0.000
+    Stage parse      :  18.494
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.285
+    Stage mbc        :   0.006
+Stage parse      :  21.684
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::TabLabel ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/TabLabel.pm6
+    Stage start      :   0.000
+    Stage parse      :  10.699
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.263
+    Stage mbc        :   0.006
+Stage parse      :  13.914
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+ === TEPL::Notebook ===
+Stage start      :   0.000
+
+    precomp ../../../../cbwood/Projects/p6-TEPL/lib/TEPL/Notebook.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.877
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.013
+    Stage mast       :   0.263
+    Stage mbc        :   0.007
+Stage parse      :  13.110
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.000
+Stage moar       :   0.000
+
+real 238.76
+user 303.48
+sys 12.49
