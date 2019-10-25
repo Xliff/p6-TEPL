@@ -126,10 +126,10 @@ class TEPL::FileLoader {
   multi method load_async (
     Int() $io_priority,
     &callback,
-    &progress_callback                       = -> { },
+    &progress_callback                       = -> *@a { },
     gpointer $user_data                      = Pointer,
     gpointer $progress_callback_data         = Pointer,
-    GCancellable $cancellable                = Pointer,
+    GCancellable() $cancellable              = GCancellable,
     GDestroyNotify $progress_callback_notify = Pointer
   ) {
     samewith(
@@ -144,7 +144,7 @@ class TEPL::FileLoader {
   }
   multi method load_async (
     Int() $io_priority,
-    GCancellable $cancellable,
+    GCancellable() $cancellable,
     &progress_callback,
     gpointer $progress_callback_data,
     GDestroyNotify $progress_callback_notify,

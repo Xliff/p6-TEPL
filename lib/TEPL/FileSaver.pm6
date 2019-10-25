@@ -134,7 +134,7 @@ class TEPL::FileSaver {
     Int() $io_priority,
     &callback,
     &progress_callback                       = -> { },
-    GCancellable $cancellable                = Pointer,
+    GCancellable() $cancellable              = GCancellable,
     GDestroyNotify $progress_callback_notify = Pointer,
     gpointer $progress_callback_data         = Pointer,
     gpointer $user_data                      = Pointer
@@ -151,7 +151,7 @@ class TEPL::FileSaver {
   }
   multi method save_async (
     Int()                 $io_priority,
-    GCancellable          $cancellable,
+    GCancellable()        $cancellable,
                           &progress_callback,
     gpointer              $progress_callback_data,
     GDestroyNotify        $progress_callback_notify,
