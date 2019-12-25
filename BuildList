@@ -1,5 +1,6 @@
 AMTK
 AMTK::Raw::Types
+GLib::Value
 GTK::Application
 GTK::ApplicationWindow
 GTK::Compat::Roles::GFile

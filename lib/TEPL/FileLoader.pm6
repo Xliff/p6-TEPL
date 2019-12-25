@@ -4,11 +4,11 @@ use Method::Also;
 use NativeCall;
 
 use GTK::Compat::Types;
-use TEPL::Raw::Types;
-
 use GTK::Raw::Utils;
-
+use TEPL::Raw::Types;
 use TEPL::Raw::FileLoader;
+
+use GLib::Value;
 
 use GTK::Roles::Properties;
 
@@ -37,10 +37,10 @@ class TEPL::FileLoader {
 
   # Type: gint64
   method chunk-size is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_INT64 );
+    my GLib::Value $gv .= new( G_TYPE_INT64 );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('chunk-size', $gv)
         );
         $gv.int64;
@@ -54,10 +54,10 @@ class TEPL::FileLoader {
 
   # Type: gint64
   method max-size is rw  {
-    my GTK::Compat::Value $gv .= new( G_TYPE_INT64 );
+    my GLib::Value $gv .= new( G_TYPE_INT64 );
     Proxy.new(
       FETCH => -> $ {
-        $gv = GTK::Compat::Value.new(
+        $gv = GLib::Value.new(
           self.prop_get('max-size', $gv)
         );
         $gv.int64;
