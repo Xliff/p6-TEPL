@@ -1,10 +1,10 @@
 AMTK
 AMTK::Raw::Types
 GIO::Roles::GFile
+GLib::Roles::ListData
 GLib::Value
 GTK::Application
 GTK::ApplicationWindow
-GTK::Compat::Roles::ListData
 GTK::Compat::Roles::Object
 GTK::Compat::Types
 GTK::Grid

@@ -8,7 +8,7 @@ use TEPL::Raw::TabGroup;
 use TEPL::View;
 use TEPL::Buffer;
 
-use GTK::Compat::Roles::ListData;
+use GLib::Roles::ListData;
 
 role TEPL::Roles::TabGroup {
   has TeplTabGroup $!ttg;
@@ -37,14 +37,14 @@ role TEPL::Roles::TabGroup {
 
   method get_buffers (:$raw = False) {
     my $l = GTK::Compat::List.new( tepl_tab_group_get_buffers($!ttg) )
-      but GTK::Compat::Roles::ListData[TeplTab];
+      but GLib::Roles::ListData[TeplTab];
     $raw ??
       $l.Array !! $l.Array.map({ TEPL::Buffer.new($_) });
   }
 
   method get_tabs (:$raw = False) {
     my $l = GTK::Compat::List.new( tepl_tab_group_get_tabs($!ttg) )
-      but GTK::Compat::Roles::ListData[TeplTab];
+      but GLib::Roles::ListData[TeplTab];
     $raw ??
       $l.Array !! $l.Array.map({ TEPL::Tab.new($_) });
   }
@@ -56,7 +56,7 @@ role TEPL::Roles::TabGroup {
 
   method get_views (:$raw = False) {
     my $l = GTK::Compat::List.new( tepl_tab_group_get_views($!ttg) )
-      but GTK::Compat::Roles::ListData[TeplView];
+      but GLib::Roles::ListData[TeplView];
     $raw ??
       $l.Array !! $l.Array.map({ TEPL::View.new($_) });
   }

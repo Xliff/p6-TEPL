@@ -5,7 +5,7 @@ use Method::Also;
 use GTK::Compat::Types;
 use TEPL::Raw::Types;
 
-use GTK::Compat::Roles::ListData;
+use GLib::Roles::ListData;
 
 use TEPL::Raw::Encoding;
 
@@ -83,7 +83,7 @@ class TEPL::Encoding {
     >
   {
     my $l = GTK::Compat::GSList.new( tepl_encoding_get_charset($!te) )
-      but GTK::Compat::Roles::ListData[TeplEncoding];
+      but GLib::Roles::ListData[TeplEncoding];
     $raw ??
       $l.Array !! $l.Array.map({ TEPL::Encoding.new($_) });
   }
@@ -97,7 +97,7 @@ class TEPL::Encoding {
   {
     my $l = GTK::Compat::GSList.new(
       tepl_encoding_get_default_candidates()
-    ) but GTK::Compat::Roles::ListData[TeplEncoding];
+    ) but GLib::Roles::ListData[TeplEncoding];
     $raw ??
       $l.Array !! $l.Array.map({ TEPL::Encoding.new($_) });
   }
