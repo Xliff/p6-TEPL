@@ -10,7 +10,7 @@ use GTK::Raw::Utils;
 
 use TEPL::Raw::FileSaver;
 
-use GTK::Compat::Roles::GFile;
+use GIO::Roles::GFile;
 use GTK::Compat::Roles::Object;
 
 class TEPL::FileSaver {
@@ -115,7 +115,7 @@ class TEPL::FileSaver {
       location
     >
   {
-    GTK::Compat::Roles::GFile.new( tepl_file_saver_get_location($!fs) );
+    GIO::Roles::GFile.new( tepl_file_saver_get_location($!fs) );
   }
 
   method get_newline_type is also<get-newline-type> {

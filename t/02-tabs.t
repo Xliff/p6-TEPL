@@ -24,7 +24,7 @@ use ProgressInfoBar;
 
 sub add-loading-error-info-bar ($t, $e) {
   ( my $file = SourceViewGTK::File.new ).location =
-    GTK::Compat::Roles::GFile.new_for_path("/home/seb/test.c");;
+    GIO::Roles::GFile.new_for_path("/home/seb/test.c");;
 
   my $buffer = SourceViewGTK::Buffer.new;
   my $loader = SourceViewGTK::FileLoader.new($buffer, $file);

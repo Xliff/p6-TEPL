@@ -5,3 +5,4 @@ LastBuildResults
 LastBuildResults.*
 .precomp
 *.old
+.touch/

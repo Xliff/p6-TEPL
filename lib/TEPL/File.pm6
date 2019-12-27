@@ -10,7 +10,7 @@ use TEPL::Raw::File;
 
 use GTK::Roles::Properties;
 
-use GTK::Compat::Roles::GFile;
+use GIO::Roles::GFile;
 
 use TEPL::Encoding;
 use TEPL::FileMetadata;
@@ -77,7 +77,7 @@ class TEPL::File {
   }
 
   method get_location is also<get-location> {
-    GTK::Compat::Roles::GFile.new( tepl_file_get_location($!tf) );
+    GIO::Roles::GFile.new( tepl_file_get_location($!tf) );
   }
 
   method get_newline_type
