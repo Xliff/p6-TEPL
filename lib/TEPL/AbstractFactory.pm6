@@ -8,12 +8,12 @@ use TEPL::Raw::Types;
 
 use TEPL::Raw::AbstractFactory;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 use GTK::Application;
 
 class TEPL::AbstractFactory {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has TeplAbstractFactory $!af;
 

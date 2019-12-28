@@ -10,10 +10,10 @@ use GTK::Raw::Utils;
 
 use TEPL::Raw::FileMetadata;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 class TEPL::FileMetadata {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has TeplFileMetadata $!tfm;
 

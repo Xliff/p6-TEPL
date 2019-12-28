@@ -11,10 +11,10 @@ use GTK::Raw::Utils;
 use TEPL::Raw::FileSaver;
 
 use GIO::Roles::GFile;
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 class TEPL::FileSaver {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has TeplFileSaver $!fs;
 

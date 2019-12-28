@@ -10,7 +10,7 @@ use GTK::Raw::Utils;
 
 use TEPL::Raw::FoldRegion;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 use TEPL::Buffer;
 
@@ -19,7 +19,7 @@ subset BufferOrObject of Mu where GTK::TextBuffer | TeplBuffer | GtkTextBuffer;
 subset IterOrObject of Mu where GTK::TextIter | GtkTextIter;
 
 class TEPL::FoldRegion {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has TeplFoldRegion $!fr;
 

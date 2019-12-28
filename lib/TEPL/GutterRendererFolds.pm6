@@ -9,10 +9,10 @@ use TEPL::Raw::Types;
 
 use GTK::Raw::Utils;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 class TEPL::GutterRendererFolds {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has TeplGutterRendererFolds $!grf;
 

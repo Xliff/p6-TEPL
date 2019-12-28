@@ -8,13 +8,13 @@ use GTK::Raw::Utils;
 
 use TEPL::Raw::ApplicationWindow;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 use GTK::ApplicationWindow;
 use GTK::WindowGroup;
 
 class TEPL::ApplicationWindow {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has TeplApplicationWindow $!taw;
 

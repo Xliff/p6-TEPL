@@ -6,13 +6,13 @@ use TEPL::Raw::Types;
 
 use TEPL::Raw::Application;
 
-use GTK::Compat::Roles::Object;
+use GLib::Roles::Object;
 
 use GTK::ApplicationWindow;
 use AMTK;
 
 class TEPL::Application {
-  also does GTK::Compat::Roles::Object;
+  also does GLib::Roles::Object;
 
   has TeplApplication $!ta;
 
