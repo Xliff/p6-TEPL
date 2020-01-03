@@ -11,24 +11,24 @@ constant tepl is export = 'tepl-4',v0;
 # Number of times a full project compilation has had to be forced.
 constant forced = 6;
 
-class TeplAbstractFactory     is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplApplication         is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplApplicationWindow   is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplBuffer              is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplEncoding            is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplFile                is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplFileLoader          is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplFileLoadfer         is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplFileMetadata        is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplFileSaver           is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplFoldRegion          is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplGutterRendererFolds is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplInfoBar             is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplNotebook            is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplTab                 is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplTabGroup            is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplTabLabel            is repr("CPointer") does GTK::Roles::Pointers is export { }
-class TeplView                is repr("CPointer") does GTK::Roles::Pointers is export { }
+class TeplAbstractFactory     is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplApplication         is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplApplicationWindow   is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplBuffer              is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplEncoding            is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplFile                is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplFileLoader          is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplFileLoadfer         is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplFileMetadata        is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplFileSaver           is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplFoldRegion          is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplGutterRendererFolds is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplInfoBar             is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplNotebook            is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplTab                 is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplTabGroup            is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplTabLabel            is repr("CPointer") does GLib::Roles::Pointers is export { }
+class TeplView                is repr("CPointer") does GLib::Roles::Pointers is export { }
 
 our enum TeplFileSaverError is export <
     TEPL_FILE_SAVER_ERROR_INVALID_CHARS
