@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
 use TEPL::Raw::Types;
 
 unit package TEPL::Raw::Buffer;
@@ -33,7 +32,7 @@ sub tepl_buffer_get_full_title (TeplBuffer $buffer)
   { * }
 
 sub tepl_buffer_get_selection_type (TeplBuffer $buffer)
-  returns uint32 # TeplSelectionType
+  returns TeplSelectionType
   is native(tepl)
   is export
   { * }
