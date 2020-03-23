@@ -6,6 +6,6 @@ our @tepl-exports is export;
 
 BEGIN {
   @tepl-exports = <
-    SourceViewGTK::Raw::Definitions
+    TEPL::Raw::Definitions
   >;
 }
