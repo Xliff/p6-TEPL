@@ -2,7 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
 use TEPL::Raw::Types;
 
 unit package TEPL::Raw::FileMetadata;
