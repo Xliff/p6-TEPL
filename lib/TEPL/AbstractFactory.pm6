@@ -2,20 +2,27 @@ use v6.c;
 
 use Method::Also;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use TEPL::Raw::Types;
-
 use TEPL::Raw::AbstractFactory;
 
-use GLib::Roles::Object;
-
 use GTK::Application;
+
+use GLib::Roles::Object;
 
 class TEPL::AbstractFactory {
   also does GLib::Roles::Object;
 
-  has TeplAbstractFactory $!af;
+  has TeplAbstractFactory $!af is implementor;
+
+  submethod BUILD (:$factory) {
+    self.setAbastractFactory($factory);
+  }
+
+  method setAbastractFactory(TeplAbstractFactory $factory) {
+    $!af = $factory;
+
+    self.roleInit-Object;
+  }
 
   method TEPL::Raw::Types::TeplAbstractFactory
     is also<
@@ -28,6 +35,10 @@ class TEPL::AbstractFactory {
   #   _tepl_abstract_factory_unref_singleton($!af);
   # }
 
+  method new (TeplAbstractFactory $factory) {
+    $factory ?? self.bless(:$factory) !! TeplAbstractFactory;
+  }
+
   proto method set_singleton (|)
     is also<set-singleton>
   { * }
@@ -36,20 +47,22 @@ class TEPL::AbstractFactory {
     TEPL::AbstractFactory:U:
     TeplAbstractFactory() $factory
   ) {
+    return TeplAbstractFactory unless $factory;
+
     tepl_abstract_factory_set_singleton($factory);
-    self.bless( :$factory );
+    self.setTeplAbstractFactory($factory);
   }
   multi method set_singleton (
     TEPL::AbstractFactory:D:
     TeplAbstractFactory() $factory
   ) {
     tepl_abstract_factory_set_singleton($factory);
-    $!af = $factory;
+    self.setTeplAbstractFactory($factory);
   }
 
-  method singleton is rw {
+  method singleton (TEPL::AbstractFactory:U:) is rw {
     Proxy.new:
-      FETCH => sub ($)                             { self },
+      FETCH => sub ($)                          { self },
       STORE => -> $, TeplAbstractFactory() \val { self.set_singleton(val) };
   }
 
@@ -71,12 +84,19 @@ class TEPL::AbstractFactory {
     tepl_abstract_factory_create_tab_label($!af, $tab);
   }
 
-  method get_singleton is also<get-singleton> {
-    tepl_abstract_factory_get_singleton();
+  method get_singleton (:$raw = False) is also<get-singleton> {
+    my $factory = tepl_abstract_factory_get_singleton();
+
+    return TeplAbstractFactory unless $factory;
+    self.setTeplAbstractFactory($factory) unless $!af;
+
+    $raw ?? $factory !! self;
   }
 
   method get_type is also<get-type> {
-    tepl_abstract_factory_get_type();
+    state ($n, $t);
+
+    unstable_get_type( self.^name, &tepl_abstract_factory_get_type, $n, $t );
   }
 
 }
