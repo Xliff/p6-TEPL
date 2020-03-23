@@ -15,7 +15,7 @@ role TEPL::Roles::TabGroup {
 
   method active-tab is rw {
     Proxy.new:
-      FETCH => -> $                 { self.get_active_tab },
+      FETCH => sub ($)                 { self.get_active_tab },
       STORE => -> $, TeplTab() $val { self.set_active_tab($val) };
   }
 

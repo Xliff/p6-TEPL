@@ -49,7 +49,7 @@ class TEPL::AbstractFactory {
 
   method singleton is rw {
     Proxy.new:
-      FETCH => -> $                             { self },
+      FETCH => sub ($)                             { self },
       STORE => -> $, TeplAbstractFactory() \val { self.set_singleton(val) };
   }
 

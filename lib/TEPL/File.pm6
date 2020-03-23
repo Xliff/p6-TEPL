@@ -35,7 +35,7 @@ class TEPL::File {
 
   method location is rw {
     Proxy.new:
-      FETCH => -> $               { self.get_location      },
+      FETCH => sub ($)               { self.get_location      },
       STORE => -> $, GFile() \val { self.set_location(val) };
   }
 

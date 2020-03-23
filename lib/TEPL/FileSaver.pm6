@@ -51,25 +51,25 @@ class TEPL::FileSaver {
 
   method compression-type is also<compression_type> is rw {
     Proxy.new:
-      FETCH => -> $             { self.get_compression_type },
+      FETCH => sub ($)             { self.get_compression_type },
       STORE => -> $, Int() \val { self.set_compression_type(val) };
   }
 
   method encoding is rw {
     Proxy.new:
-      FETCH => -> $                    { self.get_encoding },
+      FETCH => sub ($)                    { self.get_encoding },
       STORE => -> $, TeplEncoding() $e { self.set_encoding($e) };
   }
 
   method flags is rw {
     Proxy.new:
-      FETCH => -> $           { self.get_flags },
+      FETCH => sub ($)           { self.get_flags },
       STORE => -> $, Int() $f { self.set_flags($f) };
   }
 
   method newline-type is also<newline_type> is rw {
     Proxy.new:
-      FETCH => -> $            { self.get_newline_type },
+      FETCH => sub ($)            { self.get_newline_type },
       STORE => -> $, Int() $nt { self.set_newline_type($nt) };
   }
 

@@ -39,7 +39,7 @@ class TEPL::FileLoader {
   method chunk-size is rw  {
     my GLib::Value $gv .= new( G_TYPE_INT64 );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('chunk-size', $gv)
         );
@@ -56,7 +56,7 @@ class TEPL::FileLoader {
   method max-size is rw  {
     my GLib::Value $gv .= new( G_TYPE_INT64 );
     Proxy.new(
-      FETCH => -> $ {
+      FETCH => sub ($) {
         $gv = GLib::Value.new(
           self.prop_get('max-size', $gv)
         );
