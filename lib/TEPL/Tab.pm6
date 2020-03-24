@@ -2,10 +2,7 @@ use v6.c;
 
 use Method::Also;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use TEPL::Raw::Types;
-
 use TEPL::Raw::Tab;
 
 use GTK::Grid;
@@ -39,11 +36,13 @@ class TEPL::Tab is GTK::Grid {
             $to-parent = cast(GtkGrid, $_);
             $_;
           }
+
           when TeplTabGroup {
             $!ttg = $_;
             $to-parent = cast(GtkGrid, $_);      # TEPL::Roles::TabGroup
             cast(TeplTab, $_);
           }
+
           default {
             $to-parent = $_;
             cast(TeplTab, $_);
@@ -52,8 +51,10 @@ class TEPL::Tab is GTK::Grid {
         $!ttg //= cast(TeplTabGroup, $!tt);      # TEPL::Roles::TabGroup
         self.setGrid($to-parent);
       }
+
       when TEPL::Tab {
       }
+
       default {
       }
     }
@@ -66,16 +67,23 @@ class TEPL::Tab is GTK::Grid {
     >
   { $!tt }
 
-  multi method new (TeplTabAncestry $tab) {
+  multi method new (TeplTabAncestry $tab, :$ref = True) {
+    return Nil unless $tab;
+
     my $o = self.bless(:$tab);
-    $o.upref;
+    $o.upref if $ref;
+    $o;
   }
   multi method new {
-    self.bless( tab => tepl_tab_new() );
+    my $tab = tepl_tab_new();
+
+    $tab ?? self.bless(:$tab) !! Nil;
   }
 
   method new_with_view (TeplView() $view) is also<new-with-view> {
-    self.bless( tab => tepl_tab_new_with_view($view) );
+    my $tab = tepl_tab_new_with_view($view);
+
+    $tab ?? self.bless(:$tab) !! Nil;
   }
 
   # Is originally:
@@ -88,22 +96,33 @@ class TEPL::Tab is GTK::Grid {
     tepl_tab_add_info_bar($!tt, $info_bar);
   }
 
-  method get_buffer
+  method get_buffer (:$raw = False)
     is also<
       get-buffer
       buffer
     >
   {
-    TEPL::Buffer.new( tepl_tab_get_buffer($!tt) );
+    my $tb = tepl_tab_get_buffer($!tt);
+
+    $tb ??
+      ( $raw ?? $tb !! TEPL::Buffer.new($tb) )
+      !!
+      TeplBuffer;
   }
 
   method get_type is also<get-type> {
     state ($n, $t);
+
     unstable_get_type( self.^name, &tepl_tab_get_type, $n, $t );
   }
 
-  method get_view is also<get-view> {
-    TEPL::View.new( tepl_tab_get_view($!tt) );
+  method get_view (:$raw = False) is also<get-view> {
+    my $tv = tepl_tab_get_view($!tt);
+
+    $tv ??
+      ( $raw ?? $tv !! TEPL::View.new($tv) )
+      !!
+      TeplView;
   }
 
   method load_file (GFile() $location) is also<load-file> {
