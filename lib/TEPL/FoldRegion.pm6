@@ -2,21 +2,19 @@ use v6.c;
 
 use Method::Also;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use TEPL::Raw::Types;
-
-use GTK::Raw::Utils;
-
 use TEPL::Raw::FoldRegion;
+
+use GTK::TextBuffer;
+use GTK::TextIter;
 
 use GLib::Roles::Object;
 
-use TEPL::Buffer;
+subset BufferOrObject of Mu
+  where GTK::TextBuffer | TeplBuffer | GtkTextBuffer;
 
-subset BufferOrObject of Mu where GTK::TextBuffer | TeplBuffer | GtkTextBuffer;
-
-subset IterOrObject of Mu where GTK::TextIter | GtkTextIter;
+subset IterOrObject of Mu
+  where GTK::TextIter | GtkTextIter;
 
 class TEPL::FoldRegion {
   also does GLib::Roles::Object;
@@ -35,7 +33,10 @@ class TEPL::FoldRegion {
     $buffer .= TextBuffer if $buffer ~~ GTK::TextBuffer;
     $start  .= TextIter   if $start  ~~ GTK::TextIter;
     $end    .= TextIter   if $end    ~~ GTK::TextIter;
-    self.bless( region => tepl_fold_region_new($buffer, $start, $end) );
+
+    my $region = tepl_fold_region_new($buffer, $start, $end);
+
+    $region ?? self.bless(:$region) !! Nil;
   }
 
   method folded is rw {
@@ -44,25 +45,47 @@ class TEPL::FoldRegion {
         so tepl_fold_region_get_folded($!fr);
       },
       STORE => sub ($, Int() $folded is copy) {
-        my gboolean $f = resolve-bool($folded);
-        tepl_fold_region_set_folded($!fr, $folded);
+        my gboolean $f = $folded.so.Int;
+
+        tepl_fold_region_set_folded($!fr, $f);
       }
     );
   }
 
-  method get_bounds (GtkTextIter() $start, GtkTextIter() $end)
+  proto method get_bounds (|)
     is also<get-bounds>
-  {
+  { * }
+
+  multi method get_bounds {
+    samewith(GtkTextIter.new, GtkTextIter.new);
+  }
+  multi method get_bounds (
+    GtkTextIter $start is rw,
+    GtkTextIter $end   is rw,
+    :$raw = False
+  ) {
+    die 'Both $start and $end must be defined!'
+      unless $start && $end;
+
     tepl_fold_region_get_bounds($!fr, $start, $end);
+
+    $raw ?? ($start // GtkTextIter, $end // GtkTextIter)
+         !! ( GTK::TextIter.new($start), GTK::TextIter.new($end) );
   }
 
-  method get_buffer
+  method get_buffer (:$raw = False, :$gtk = False)
     is also<
       get-buffer
       buffer
     >
   {
-    TEPL::Buffer.new( tepl_fold_region_get_buffer($!fr) );
+    my $b = tepl_fold_region_get_buffer($!fr);
+
+    $b ??
+      ( $raw ?? $b
+             !! ($gtk ?? GTK::Buffer.new($b) !! TEPL::Buffer.new($b) ) )
+      !!
+      ( $gtk ?? GtkTextBuffer !! TeplBuffer )
   }
 
   method set_bounds (GtkTextIter() $start, GtkTextIter() $end)
