@@ -2,10 +2,7 @@ use v6.c;
 
 use Method::Also;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use TEPL::Raw::Types;
-
 use TEPL::Raw::InfoBar;
 
 use GTK::InfoBar;
@@ -48,19 +45,22 @@ class TEPL::InfoBar is GTK::InfoBar {
   { $!tib }
 
   method new {
-    self.bless( teplinfobar => tepl_info_bar_new() );
+    my $teplinfobar = tepl_info_bar_new();
+
+    $teplinfobar ?? self.bless(:$teplinfobar) !! Nil;
   }
 
   method new_simple (Int() $msg_type, Str() $primary_msg, Str() $secondary_msg)
     is also<new-simple>
   {
     my guint $mt = $msg_type;
-
-    self.bless(
-      teplinfobar => tepl_info_bar_new_simple(
-        $mt, $primary_msg, $secondary_msg
-      )
+    my $teplinfobar = tepl_info_bar_new_simple(
+      $mt,
+      $primary_msg,
+      $secondary_msg
     );
+
+    $teplinfobar ?? self.bless(:$teplinfobar) !! Nil;
   }
 
   method add_close_button is also<add-close-button> {
@@ -89,8 +89,13 @@ class TEPL::InfoBar is GTK::InfoBar {
     tepl_info_bar_add_secondary_message($!tib, $secondary_msg);
   }
 
-  method create_label is also<create-label> {
-    GTK::Label.new( tepl_info_bar_create_label() );
+  method create_label (:$raw = False) is also<create-label> {
+    my $l = tepl_info_bar_create_label();
+
+    $l ??
+      ( $raw ?? $l !! GTK::Label.new($l) )
+      !!
+      GtkLabel;
   }
 
 }

@@ -2,8 +2,6 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use TEPL::Raw::Types;
 
 unit package TEPL::Raw::InfoBar;
@@ -55,7 +53,7 @@ sub tepl_info_bar_new ()
 { * }
 
 sub tepl_info_bar_new_simple (
-  uint32 $msg_type,  # GtkMessageType $msg_type, 
+  uint32 $msg_type,  # GtkMessageType $msg_type,
   Str $primary_msg,
   Str $secondary_msg
 )
