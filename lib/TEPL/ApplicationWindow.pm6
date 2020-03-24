@@ -21,7 +21,7 @@ class TEPL::ApplicationWindow {
     return TeplApplicationWindow unless $window;
 
     my $o = self.bless(:$window);
-    $o.upref if $ref;
+    $o.ref if $ref;
     $o;
   }
 

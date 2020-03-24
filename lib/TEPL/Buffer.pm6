@@ -54,7 +54,7 @@ class TEPL::Buffer is SourceViewGTK::Buffer {
     return Nil unless $buffer;
 
     my $o = self.bless($buffer);
-    $o.upref if $ref;
+    $o.ref if $ref;
     $o;
   }
   multi method new {
