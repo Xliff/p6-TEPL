@@ -2,10 +2,12 @@ use v6.c;
 
 use NativeCall;
 
-use GTK::Compat::Types;
 use TEPL::Raw::Types;
 
+use GLib::Roles::StaticClass;
+
 class TEPL::MetadataManager {
+  also does GLib::Roles::StaticClass;
 
   method init (Str() $path) {
     tepl_metadata_manager_init($path);
@@ -13,11 +15,6 @@ class TEPL::MetadataManager {
 
   method shutdown {
     tepl_metadata_manager_shutdown();
-  }
-
-  method new {
-    warn 'TEPL::MetadataManager is a static class and cannot be instantiated!';
-    TEPL::MetadataManager;
   }
 
 }
