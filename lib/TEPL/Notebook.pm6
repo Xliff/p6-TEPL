@@ -2,10 +2,7 @@ use v6.c;
 
 use Method::Also;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use TEPL::Raw::Types;
-
 use TEPL::Raw::Notebook;
 
 use TEPL::Roles::TabGroup;
@@ -35,11 +32,13 @@ class TEPL::Notebook is GTK::Notebook {
             $to-parent = cast(GtkNotebook, $_);
             $_;
           }
+
           when TeplTabGroup {
             $!ttg = $_;                           # TEPL::Roles::TabGroup
             $to-parent = cast(GtkGrid, $_);
             cast(TeplNotebook, $_);
           }
+
           default {
             $to-parent = $_;
             cast(TeplNotebook, $_);
@@ -48,8 +47,10 @@ class TEPL::Notebook is GTK::Notebook {
         $!ttg //= cast(TeplTabGroup, $!tn);       # TEPL::Roles::TabGroup
         self.setNotebook($to-parent);
       }
+
       when TEPL::Notebook {
       }
+
       default {
       }
     }
@@ -62,16 +63,22 @@ class TEPL::Notebook is GTK::Notebook {
     >
   { $!tn }
 
-  multi method notebook(TeplNotebookAncestry $notebook) {
+  multi method notebook(TeplNotebookAncestry $notebook, :$ref = True) {
+    return Nil unless $notebook;
+
     my $o = self.bless(:$notebook);
-    $o.upref;
+    $o.ref if $ref;
+    $o;
   }
   method new {
-    self.bless( notebook => tepl_notebook_new() );
+    my $notebook = tepl_notebook_new();
+
+    $notebook ?? self.bless( :$notebook ) !! Nil;
   }
 
   method get_type is also<get-type> {
     state ($n, $t);
+
     unstable_get_type( self.^name, &tepl_notebook_get_type, $n, $t );
   }
 
