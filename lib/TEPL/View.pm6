@@ -59,7 +59,7 @@ class TEPL::View is SourceViewGTK::View {
   multi method new {
     my $view = tepl_view_new();
 
-    $view ?? self.bless($view) !! Nil;
+    $view ?? self.bless(:$view) !! Nil;
   }
 
   method copy_clipboard {
@@ -100,7 +100,7 @@ class TEPL::View is SourceViewGTK::View {
 
   method select_lines (Int() $start_line, Int() $end_line) {
     my gint ($sl, $el) = ($start_line, $end_line);
-    
+
     tepl_view_select_lines($!tv, $sl, $el);
   }
 
