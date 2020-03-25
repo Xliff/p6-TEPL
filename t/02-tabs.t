@@ -2,9 +2,7 @@ use v6.c;
 
 use lib <t .>;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
-use SourceViewGTK::Raw::Types;
+use TEPL::Raw::Types;
 
 use GIO::Raw::Quarks;
 use SourceViewGTK::Raw::Quarks;
@@ -21,6 +19,8 @@ use TEPL::InfoBar;
 use TEPL::Tab;
 
 use ProgressInfoBar;
+
+use GIO::Roles::GFile;
 
 sub add-loading-error-info-bar ($t, $e) {
   ( my $file = SourceViewGTK::File.new ).location =

@@ -1,14 +1,12 @@
 use v6.c;
 
 use Method::Also;
-
 use URI;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
-use SourceViewGTK::Raw::Types;
-
-use GTK::Raw::Utils;
+use TEPL::Raw::Types;
+use GLib::Raw::Quarks;
+use GIO::Raw::Quarks;
+use SourceViewGTK::Raw::Quarks;
 
 use GLib::Error;
 use GLib::Unicode;
@@ -20,10 +18,6 @@ use GTK::ProgressBar;
 use SourceViewGTK::Encoding;
 use SourceViewGTK::FileLoader;
 use TEPL::InfoBar;
-
-use GLib::Raw::Quarks;
-use GIO::Raw::Quarks;
-use SourceViewGTK::Raw::Quarks;
 
 class TEPL::ProgressInfoBar is TEPL::InfoBar is export {
   has $!l          handles <text>;
@@ -68,7 +62,7 @@ class TEPL::ProgressInfoBar is TEPL::InfoBar is export {
   }
 
   method set-has-cancel-button (Int() $hcb) is also<set_has_cancel_button> {
-    $!cancel = resolve-bool($hcb);
+    $!cancel = $hcb.so.Int;
 
     return unless $!cancel;
     self.add-button('_Cancel', GTK_RESPONSE_CANCEL);
@@ -89,7 +83,8 @@ class TEPL::ErrorInfoBar is TEPL::InfoBar is export {
   }
 
   method new {
-    my $o = self.bless( info-bar => TEPL::InfoBar.new );
+    die 'Could not create a TEPL::ErrorInfoBar' unless
+      ( my $o = self.bless( info-bar => TEPL::InfoBar.new ) );
     $o;
   }
 
@@ -208,7 +203,7 @@ class TEPL::ErrorInfoBar is TEPL::InfoBar is export {
       $loader ~~ SourceViewGTK::FileLoader;
 
     my ($location, $encoding) = ($loader.location, $loader.encoding);
-    my $displayUri = $location.defined ?? $location.get-parse-name !! 'stdin';
+    my $displayUri = $location.defined ?? $location.get_parse_name !! 'stdin';
     my ($edit-anyways, $convert-error, $primary, $secondary) = False xx 2;
 
     given $error {
