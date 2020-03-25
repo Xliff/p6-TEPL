@@ -21,6 +21,7 @@ GLib::Raw::Structs
 GLib::Raw::Subs
 GLib::Roles::ListData
 GLib::Roles::Object
+GLib::Roles::StaticClass
 GLib::Value
 GTK::Application
 GTK::ApplicationWindow
@@ -39,6 +40,8 @@ GTK::Raw::Types
 GTK::Raw::Utils
 GTK::Roles::Properties
 GTK::Roles::Signals::Generic
+GTK::TextBuffer
+GTK::TextIter
 GTK::WindowGroup
 Method::Also
 Pango::Raw::Definitions
@@ -50,16 +53,15 @@ SourceViewGTK::Buffer
 SourceViewGTK::Raw::Definitions
 SourceViewGTK::Raw::Enums
 SourceViewGTK::Raw::Exports
-SourceViewGTK::Raw::Types
 SourceViewGTK::View
-TEPL::Raw::Exports
 TEPL::Raw::Definitions
+TEPL::Main
+TEPL::Raw::Exports
 TEPL::Raw::Types
 TEPL::Raw::View
 TEPL::Utils
 TEPL::View
 TEPL::GutterRendererFolds
-TEPL::Main
 TEPL::MetadataManager
 TEPL::Raw::AbstractFactory
 TEPL::Raw::Application
@@ -83,10 +85,10 @@ TEPL::Encoding
 TEPL::FileLoader
 TEPL::FileMetadata
 TEPL::FileSaver
+TEPL::FoldRegion
 TEPL::InfoBar
 TEPL::File
 TEPL::Buffer
-TEPL::FoldRegion
 TEPL::Roles::TabGroup
 TEPL::Tab
 TEPL::TabLabel
