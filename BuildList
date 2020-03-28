@@ -25,7 +25,6 @@ GLib::Roles::StaticClass
 GLib::Value
 GTK::Application
 GTK::ApplicationWindow
-GTK::Compat::Types
 GTK::Grid
 GTK::InfoBar
 GTK::Label
@@ -36,9 +35,6 @@ GTK::Raw::Exports
 GTK::Raw::Requisition
 GTK::Raw::Structs
 GTK::Raw::Subs
-GTK::Raw::Types
-GTK::Raw::Utils
-GTK::Roles::Properties
 GTK::Roles::Signals::Generic
 GTK::TextBuffer
 GTK::TextIter
@@ -82,13 +78,13 @@ TEPL::AbstractFactory
 TEPL::Application
 TEPL::ApplicationWindow
 TEPL::Encoding
-TEPL::FileLoader
 TEPL::FileMetadata
 TEPL::FileSaver
 TEPL::FoldRegion
 TEPL::InfoBar
 TEPL::File
 TEPL::Buffer
+TEPL::FileLoader
 TEPL::Roles::TabGroup
 TEPL::Tab
 TEPL::TabLabel
