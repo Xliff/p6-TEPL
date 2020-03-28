@@ -56,7 +56,7 @@ role TEPL::Roles::TabGroup {
     return Nil unless $l;
     return $l  if $glist;
 
-    $l = GTK::Compat::List.new($l) but GLib::Roles::ListData[TeplTab];
+    $l = GLib::GList.new($l) but GLib::Roles::ListData[TeplTab];
     $raw ?? $l.Array !! $l.Array.map({ TEPL::Buffer.new($_) });
   }
 
@@ -66,7 +66,7 @@ role TEPL::Roles::TabGroup {
     return Nil unless $l;
     return $l  if $glist;
 
-    $l = GTK::Compat::List.new($l) but GLib::Roles::ListData[TeplTab];
+    $l = GLib::GList.new($l) but GLib::Roles::ListData[TeplTab];
     $raw ?? $l.Array !! $l.Array.map({ TEPL::Tab.new($_) });
   }
 
@@ -82,7 +82,7 @@ role TEPL::Roles::TabGroup {
     return Nil unless $l;
     return $l  if $glist;
 
-    $l = GTK::Compat::List.new($l) but GLib::Roles::ListData[TeplView];
+    $l = GLib::GList.new($l) but GLib::Roles::ListData[TeplView];
     $raw ?? $l.Array !! $l.Array.map({ TEPL::View.new($_) });
   }
 

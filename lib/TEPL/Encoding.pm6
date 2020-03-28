@@ -75,7 +75,7 @@ class TEPL::Encoding {
     return $l  if $glist;
 
     # GSList is still ill, so using GList
-    $l = GTK::Compat::GList.new($l) but GLib::Roles::ListData[TeplEncoding];
+    $l = GList::GList.new($l) but GLib::Roles::ListData[TeplEncoding];
     $raw ?? $l.Array !! $l.Array.map({ TEPL::Encoding.new($_) });
   }
 
