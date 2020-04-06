@@ -3,11 +3,7 @@ use v6.c;
 use NativeCall;
 use Method::Also;
 
-use GTK::Compat::Types;
-use SourceViewGTK::Raw::Types;
 use TEPL::Raw::Types;
-
-use GTK::Raw::Utils;
 
 use GLib::Roles::Object;
 
@@ -20,12 +16,18 @@ class TEPL::GutterRendererFolds {
     self!setObject($!grf = $folds);
   }
 
-  method new {
-    tepl_gutter_renderer_folds_new();
+  multi method new (TeplGutterRendererFolds $folds) {
+    $folds ?? self.bless(:$folds) !! Nil;
+  }
+  multi method new {
+    my $folds = tepl_gutter_renderer_folds_new();
+
+    $folds ?? self.bless(:$folds) !! Nil;
   }
 
   method set_state (Int() $state) is also<set-state> {
-    my guint $s = resolve-int($state);
+    my guint $s = $state;
+    
     tepl_gutter_renderer_folds_set_state($!grf, $s);
   }
 

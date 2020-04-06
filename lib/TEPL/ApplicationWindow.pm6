@@ -1,17 +1,12 @@
 use v6.c;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use TEPL::Raw::Types;
-
-use GTK::Raw::Utils;
-
 use TEPL::Raw::ApplicationWindow;
-
-use GLib::Roles::Object;
 
 use GTK::ApplicationWindow;
 use GTK::WindowGroup;
+
+use GLib::Roles::Object;
 
 class TEPL::ApplicationWindow {
   also does GLib::Roles::Object;
@@ -22,9 +17,12 @@ class TEPL::ApplicationWindow {
     self!setObject($!taw = $window);
   }
 
-  multi method new (TeplApplicationWindow $window) {
+  multi method new (TeplApplicationWindow $window, :$ref = True) {
+    return TeplApplicationWindow unless $window;
+
     my $o = self.bless(:$window);
-    $o.upref;
+    $o.ref if $ref;
+    $o;
   }
 
   method handle_title is rw {
@@ -33,34 +31,49 @@ class TEPL::ApplicationWindow {
         so tepl_application_window_get_handle_title($!taw);
       },
       STORE => sub ($, Int() $handle_title is copy) {
-        my gboolean $h = resolve-bool($handle_title);
+        my gboolean $h = $handle_title.so.Int;
+
         tepl_application_window_set_handle_title($!taw, $h);
       }
     );
   }
 
 
-  method get_application_window {
-    GTK::ApplicationWindow.new(
-      tepl_application_window_get_application_window($!taw)
-    );
+  method get_application_window (:$raw = False) {
+    my $aw = tepl_application_window_get_application_window($!taw);
+
+    $aw ??
+      ( $raw ?? $aw !! GTK::ApplicationWindow.new($aw) )
+      !!
+      TeplApplicationWindow;
   }
 
-  method get_from_gtk_application_window {
-    self.bless(
-      window => tepl_application_window_get_from_gtk_application_window(
-        cast(GtkApplicationWindow, $!taw)
-      )
-    );
+  method get_from_gtk_application_window (
+    TEPL::ApplicationWindow:U:
+    GtkWindow() $gtk-w,
+    :$raw = False
+  ) {
+    my $tw = tepl_application_window_get_from_gtk_application_window($gtk-w);
+
+    $tw ??
+      ( $raw ?? $tw !! TEPL::ApplicationWindow.new($tw, :!ref) )
+      !!
+      TeplApplicationWindow;
   }
 
   method get_type {
     state ($n, $t);
+
     unstable_get_type( self.^name, &tepl_application_window_get_type, $n, $t );
   }
 
-  method get_window_group {
-    GTK::WindowGroup.new( tepl_application_window_get_window_group($!taw) );
+  method get_window_group (:$raw = False) {
+    my $wg = tepl_application_window_get_window_group($!taw);
+
+    $wg ??
+      ( $raw ?? $wg !! GTK::WindowGroup.new($wg) )
+      !!
+      GtkWindowGroup;
   }
 
   method is_main_window {
@@ -70,7 +83,8 @@ class TEPL::ApplicationWindow {
   }
 
   method open_file (GFile() $location, Int() $jump_to) {
-    my gboolean $j = resolve-bool($jump_to);
+    my gboolean $j = $jump_to.so.Int;
+
     tepl_application_window_open_file($!taw, $location, $j);
   }
 

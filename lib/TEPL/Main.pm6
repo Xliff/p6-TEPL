@@ -1,28 +1,30 @@
 use v6.c;
 
+use NativeCall;
 use Method::Also;
 
-use TEPL::Raw::Types;
+use TEPL::Raw::Definitions;
 
-use NativeCall;
+use GLib::Roles::StaticClass;
 
 class TEPL::Main {
-  
+  also does GLib::Roles::StaticClass;
+
   method init {
     tepl_init();
   }
-  
+
   method quit is also<finalize end> {
     tepl_finalize();
   }
-  
+
 }
 
 sub tepl_init()
   is native(tepl)
   is export
   { * }
-  
+
 sub tepl_finalize()
   is native(tepl)
   is export

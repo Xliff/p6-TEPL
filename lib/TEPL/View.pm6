@@ -2,10 +2,7 @@ use v6.c;
 
 use Method::Also;
 
-use GTK::Compat::Types;
-use SourceViewGTK::Raw::Types;
 use TEPL::Raw::Types;
-
 use TEPL::Raw::View;
 
 use SourceViewGTK::View;
@@ -31,6 +28,7 @@ class TEPL::View is SourceViewGTK::View {
             $to-parent = cast(GtkSourceView, $_);
             $_;
           }
+
           default {
             $to-parent = $_;
             cast(TeplView, $_);
@@ -38,21 +36,30 @@ class TEPL::View is SourceViewGTK::View {
         }
         self.setSourceView($to-parent);
       }
+
       when TEPL::View {
       }
+
       default {
       }
     }
   }
 
-  method TEPL::Raw::Types::TeplView is also<TeplView> { $!tv }
+  method TEPL::Raw::Types::TeplView
+    is also<TeplView>
+  { $!tv }
 
-  multi method new (TeplView $view) {
+  multi method new (TeplViewAncestry $view, :$ref = True) {
+    return Nil unless $view;
+
     my $o = self.bless(:$view);
-    $o.upref;
+    $o.upref if $ref;
+    $o;
   }
   multi method new {
-    self.bless( view => tepl_view_new() );
+    my $view = tepl_view_new();
+
+    $view ?? self.bless(:$view) !! Nil;
   }
 
   method copy_clipboard {
@@ -68,12 +75,14 @@ class TEPL::View is SourceViewGTK::View {
   }
 
   method goto_line (Int() $line) {
-    my gint $l = self.RESOLVE-INT($line);
+    my gint $l = $line;
+
     so tepl_view_goto_line($!tv, $l);
   }
 
   method goto_line_offset (Int() $line, Int() $line_offset) {
-    my gint ($l, $lo) = self.RESOLVE-INT($line, $line_offset);
+    my gint ($l, $lo) = ($line, $line_offset);
+
     so tepl_view_goto_line_offset($!tv, $line, $line_offset);
   }
 
@@ -90,7 +99,8 @@ class TEPL::View is SourceViewGTK::View {
   }
 
   method select_lines (Int() $start_line, Int() $end_line) {
-    my gint ($sl, $el) = self.RESOLVE-INT($start_line, $end_line);
+    my gint ($sl, $el) = ($start_line, $end_line);
+
     tepl_view_select_lines($!tv, $sl, $el);
   }
 

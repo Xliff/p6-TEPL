@@ -2,12 +2,10 @@ use v6.c;
 
 use Method::Also;
 
-use GTK::Compat::Types;
 use TEPL::Raw::Types;
+use TEPL::Raw::Encoding;
 
 use GLib::Roles::ListData;
-
-use TEPL::Raw::Encoding;
 
 # BOXED TYPE
 
@@ -18,32 +16,35 @@ class TEPL::Encoding {
     $!te = $encoding;
   }
 
-  method TEPL::Raw::Types::TeplEncoding { $!te }
+  method TEPL::Raw::Types::TeplEncoding
+    is also<TeplEncoding>
+  { $!te }
 
   multi method new (TeplEncoding $encoding) {
-    self.bless(:$encoding);
+    $encoding ?? self.bless(:$encoding) !! Nil;
   }
-  multi method new(
-    :$charset,
-    :$locale,
-    :$utf8
-  ) {
-    die ':charset, :locale and :utf8 options cannot be used at the same time!'
-      if [&&]($charset.defined, $locale.defined, $utf8.defined);
+  multi method new (Str() $charset) {
+    my $encoding = tepl_encoding_new($charset);
 
-    $locale ??
-      self.new_from_locale !!
-      $utf8 ??
-        self.new_utf8 !!
-        self.bless( encoding => tepl_encoding_new($charset) );
+    $encoding ?? self.bless(:$encoding) !! Nil;
   }
 
+  multi method new (:$locale is required) {
+    self.new_from_locale;
+  }
   method new_from_locale is also<new-from-locale> {
-    self.bless( encoding => tepl_encoding_new_from_locale() );
+    my $encoding = tepl_encoding_new_from_locale();
+
+    $encoding ?? self.bless(:$encoding) !! Nil;
   }
 
+  multi method new (:$utf8 is required) {
+    self.new_utf8;
+  }
   method new_utf8 is also<new-utf8> {
-    self.bless( encoding => tepl_encoding_new_utf8() );
+    my $encoding = tepl_encoding_new_utf8();
+
+    $encoding ?? self.bless(:$encoding) !! Nil;
   }
 
   method to_string
@@ -56,7 +57,9 @@ class TEPL::Encoding {
   }
 
   method copy {
-    self.bless( encoding => tepl_encoding_copy($!te) );
+    my $encoding = tepl_encoding_copy($!te);
+
+    $encoding ?? TEPL::Encoding.new($encoding) !! TeplEncoding;
   }
 
   method equals (TeplEncoding $enc2) {
@@ -67,39 +70,49 @@ class TEPL::Encoding {
     tepl_encoding_free($!te);
   }
 
-  method get_all
+  method !process-returned-list($l, :$glist, :$raw) {
+    return Nil unless $l;
+    return $l  if $glist;
+
+    # GSList is still ill, so using GList
+    $l = GList::GList.new($l) but GLib::Roles::ListData[TeplEncoding];
+    $raw ?? $l.Array !! $l.Array.map({ TEPL::Encoding.new($_) });
+  }
+
+  method get_all (:$glist = False, :$raw = False)
     is also<
       get-all
       all
     >
   {
-    tepl_encoding_get_all();
+    self!process-returned-list( tepl_encoding_get_all(), :$glist, $raw );
   }
 
-  method get_charset (:$raw)
+  method get_charset (:$glist = False, :$raw = False)
     is also<
       get-charset
       charset
     >
   {
-    my $l = GTK::Compat::GSList.new( tepl_encoding_get_charset($!te) )
-      but GLib::Roles::ListData[TeplEncoding];
-    $raw ??
-      $l.Array !! $l.Array.map({ TEPL::Encoding.new($_) });
+    self!process-returned-list(
+      tepl_encoding_get_charset($!te),
+      :$glist,
+      :$raw
+    );
   }
 
-  method get_default_candidates (:$raw)
+  method get_default_candidates (:$glist = False, :$raw = False)
     is also<
       get-default-candidates
       default_candidates
       default-candidates
     >
   {
-    my $l = GTK::Compat::GSList.new(
-      tepl_encoding_get_default_candidates()
-    ) but GLib::Roles::ListData[TeplEncoding];
-    $raw ??
-      $l.Array !! $l.Array.map({ TEPL::Encoding.new($_) });
+    self!process-returned-list(
+      tepl_encoding_get_default_candidates(),
+      $glist,
+      $raw
+    );
   }
 
   method get_name
@@ -113,11 +126,12 @@ class TEPL::Encoding {
 
   method get_type is also<get-type> {
     state ($n, $t);
+
     unstable_get_type( self.^name, &tepl_encoding_get_type, $n, $t );
   }
 
   method is_utf8 is also<is-utf8> {
-    tepl_encoding_is_utf8($!te);
+    so tepl_encoding_is_utf8($!te);
   }
 
 }

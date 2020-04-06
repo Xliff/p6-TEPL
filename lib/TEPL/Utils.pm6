@@ -3,11 +3,12 @@ use v6.c;
 use NativeCall;
 use Method::Also;
 
-use GTK::Compat::Types;
-use GTK::Raw::Types;
 use TEPL::Raw::Types;
 
+use GLib::Roles::StaticClass;
+
 class TEPL::Utils {
+  also does GLib::Roles::StaticClass;
 
   method get_line_indentation (GtkTextIter() $iter) {
     tepl_iter_get_line_indentation($iter)
@@ -15,12 +16,6 @@ class TEPL::Utils {
 
   method append_edit_actions (GtkMenuShell() $menu_shell) {
     tepl_append_edit_actions($menu_shell);
-  }
-
-  method new {
-    warn 'TEPL::Utils is a static class and cannot be instantiated.';
-    
-    TEPL::Utils;
   }
 
 }

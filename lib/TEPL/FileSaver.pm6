@@ -3,15 +3,11 @@ use v6.c;
 use Method::Also;
 use NativeCall;
 
-use GTK::Compat::Types;
 use TEPL::Raw::Types;
-
-use GTK::Raw::Utils;
-
 use TEPL::Raw::FileSaver;
 
-use GIO::Roles::GFile;
 use GLib::Roles::Object;
+use GIO::Roles::GFile;
 
 class TEPL::FileSaver {
   also does GLib::Roles::Object;
@@ -29,8 +25,13 @@ class TEPL::FileSaver {
     >
   { $!fs }
 
-  method new (TeplBuffer() $buffer, TeplFile() $file) {
-    self.bless( saver => tepl_file_saver_new($buffer, $file) );
+  multi method new (TeplFileSaver $saver) {
+    $saver ?? self.bless(:$saver) !! Nil;
+  }
+  multi method new (TeplBuffer() $buffer, TeplFile() $file) {
+    my $saver = tepl_file_saver_new($buffer, $file);
+
+    $saver ?? self.bless(:$saver) !! Nil;
   }
 
   method new_with_target (
@@ -40,69 +41,84 @@ class TEPL::FileSaver {
   )
     is also<new-with-target>
   {
-    self.bless(
-      saver => tepl_file_saver_new_with_target(
-        $buffer,
-        $file,
-        $target_location
-      )
+    my $saver = tepl_file_saver_new_with_target(
+      $buffer,
+      $file,
+      $target_location
     );
+
+    $saver ?? self.bless(:$saver) !! Nil;
   }
 
   method compression-type is also<compression_type> is rw {
     Proxy.new:
-      FETCH => -> $             { self.get_compression_type },
+      FETCH => sub ($)          { self.get_compression_type      },
       STORE => -> $, Int() \val { self.set_compression_type(val) };
   }
 
-  method encoding is rw {
+  method encoding (:$raw = False) is rw {
     Proxy.new:
-      FETCH => -> $                    { self.get_encoding },
-      STORE => -> $, TeplEncoding() $e { self.set_encoding($e) };
+      FETCH => sub ($)                 { self.get_encoding(:$raw) },
+      STORE => -> $, TeplEncoding() $e { self.set_encoding($e) }   ;
   }
 
   method flags is rw {
     Proxy.new:
-      FETCH => -> $           { self.get_flags },
+      FETCH => sub ($)        { self.get_flags },
       STORE => -> $, Int() $f { self.set_flags($f) };
   }
 
   method newline-type is also<newline_type> is rw {
     Proxy.new:
-      FETCH => -> $            { self.get_newline_type },
+      FETCH => sub ($)         { self.get_newline_type },
       STORE => -> $, Int() $nt { self.set_newline_type($nt) };
   }
 
-  method error_quark is also<error-quark> {
+  method error_quark (TEPL::FileSaver:U: ) is also<error-quark> {
     tepl_file_saver_error_quark();
   }
 
-  method get_buffer
+  method get_buffer (:$raw = False)
     is also<
       get-buffer
       buffer
     >
   {
-    tepl_file_saver_get_buffer($!fs);
+    my $b = tepl_file_saver_get_buffer($!fs);
+
+    $b ??
+      ( $raw ?? $b !! TEPL::Buffer.new($b) )
+      !!
+      TeplBuffer;
   }
 
   method get_compression_type is also<get-compression-type>
   {
-    tepl_file_saver_get_compression_type($!fs);
+    TeplCompressionTypeEnum( tepl_file_saver_get_compression_type($!fs) );
   }
 
-  method get_encoding is also<get-encoding>
+  method get_encoding (:$raw = False) is also<get-encoding>
   {
-    tepl_file_saver_get_encoding($!fs);
+    my $e = tepl_file_saver_get_encoding($!fs);
+
+    $e ??
+      ( $raw ?? $e !! TEPL::Encoding.new($e) )
+      !!
+      TeplEncoding;
   }
 
-  method get_file
+  method get_file (:$raw = False)
     is also<
       get-file
       file
     >
   {
-    tepl_file_saver_get_file($!fs);
+    my $tf = tepl_file_saver_get_file($!fs);
+
+    $tf ??
+      ( $raw ?? $tf !! TEPL::File.new($tf) )
+      !!
+      TeplFile;
   }
 
   method get_flags is also<get-flags> {
@@ -115,15 +131,17 @@ class TEPL::FileSaver {
       location
     >
   {
-    GIO::Roles::GFile.new( tepl_file_saver_get_location($!fs) );
+    GIO::Roles::GFile.new-file-obj( tepl_file_saver_get_location($!fs) );
   }
 
   method get_newline_type is also<get-newline-type> {
-    TeplNewlineType( tepl_file_saver_get_newline_type($!fs) );
+    TeplNewlineTypeEnum( tepl_file_saver_get_newline_type($!fs) );
   }
 
   method get_type is also<get-type> {
-    tepl_file_saver_get_type();
+    state ($n, $t);
+
+    unstable_get_type( self.^name, &tepl_file_saver_get_type, $n, $t );
   }
 
   proto method save_async (|)
@@ -133,7 +151,7 @@ class TEPL::FileSaver {
   multi method save_async (
     Int() $io_priority,
     &callback,
-    &progress_callback                       = -> { },
+    &progress_callback                       = Callable,
     GCancellable() $cancellable              = GCancellable,
     GDestroyNotify $progress_callback_notify = Pointer,
     gpointer $progress_callback_data         = Pointer,
@@ -158,7 +176,8 @@ class TEPL::FileSaver {
                           &callback,
     gpointer              $user_data
   ) {
-    my gint $io = resolve-int($io_priority);
+    my gint $io = $io_priority;
+
     tepl_file_saver_save_async(
       $!fs,
       $io,
@@ -176,7 +195,7 @@ class TEPL::FileSaver {
     CArray[Pointer[GError]] $error = gerror()
   ) {
     clear_error;
-    my $rc = tepl_file_saver_save_finish($!fs, $result, $error);
+    my $rc = so tepl_file_saver_save_finish($!fs, $result, $error);
     set_error($error);
     $rc;
   }
@@ -184,7 +203,8 @@ class TEPL::FileSaver {
   method set_compression_type (Int() $compression_type)
     is also<set-compression-type>
   {
-    my guint $ct = resolve-uint($compression_type);
+    my guint $ct = $compression_type;
+
     tepl_file_saver_set_compression_type($!fs, $ct);
   }
 
@@ -193,14 +213,16 @@ class TEPL::FileSaver {
   }
 
   method set_flags (Int() $flags) is also<set-flags> {
-    my guint $f = resolve-uint($flags);
+    my guint $f = $flags;
+
     tepl_file_saver_set_flags($!fs, $f);
   }
 
   method set_newline_type (Int() $newline_type)
     is also<set-newline-type>
   {
-    my guint $nt = resolve-uint($newline_type);
+    my guint $nt = $newline_type;
+
     tepl_file_saver_set_newline_type($!fs, $nt);
   }
 

@@ -2,14 +2,10 @@ use v6.c;
 
 use Method::Also;
 
-use GTK::Compat::Types;
-use SourceViewGTK::Raw::Types;
 use TEPL::Raw::Types;
-
 use TEPL::Raw::Buffer;
 
 use SourceViewGTK::Buffer;
-
 use TEPL::File;
 
 our subset TeplBufferAncestry is export
@@ -33,6 +29,7 @@ class TEPL::Buffer is SourceViewGTK::Buffer {
             $to-parent = cast(GtkSourceBuffer, $_);
             $_;
           }
+
           default {
             $to-parent = $_;
             cast(TeplBuffer, $_);
@@ -40,30 +37,44 @@ class TEPL::Buffer is SourceViewGTK::Buffer {
         }
         self.setSourceBuffer($to-parent);
       }
+
       when SourceViewGTK::Buffer {
       }
+
       default {
       }
     }
   }
 
-  method TEPL::Raw::Types::TeplBuffer is also<TeplBuffer> { $!tb }
+  method TEPL::Raw::Types::TeplBuffer
+    is also<TeplBuffer>
+  { $!tb }
 
-  multi method new(TeplBufferAncestry $buffer) {
+  multi method new(TeplBufferAncestry $buffer, :$ref = True) {
+    return Nil unless $buffer;
+
     my $o = self.bless($buffer);
-    $o.upref;
+    $o.ref if $ref;
+    $o;
   }
   multi method new {
-    self.bless( buffer => tepl_buffer_new() );
+    my $buffer = tepl_buffer_new();
+
+    $buffer ?? self.bless(:$buffer) !! Nil;
   }
 
-  method get_file
+  method get_file (:$raw = False)
     is also<
       get-file
       file
     >
   {
-    TEPL::File.new( tepl_buffer_get_file($!tb) );
+    my $tf = tepl_buffer_get_file($!tb);
+
+    $tf ??
+      ($raw ?? $tf !! TEPL::File.new($tf) )
+      !!
+      TeplFile;
   }
 
   method get_full_title
@@ -83,7 +94,7 @@ class TEPL::Buffer is SourceViewGTK::Buffer {
       selection-type
     >
   {
-    TeplSelectionType( tepl_buffer_get_selection_type($!tb) );
+    TeplSelectionTypeEnum( tepl_buffer_get_selection_type($!tb) );
   }
 
   method get_short_title

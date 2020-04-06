@@ -3,39 +3,40 @@ use v6.c;
 use Method::Also;
 use NativeCall;
 
-use GTK::Compat::Types;
 use TEPL::Raw::Types;
-
 use TEPL::Raw::File;
-
-use GTK::Roles::Properties;
-
-use GIO::Roles::GFile;
 
 use TEPL::Encoding;
 use TEPL::FileMetadata;
 
+use GLib::Roles::Object;
+use GIO::Roles::GFile;
+
 class TEPL::File {
-  also does GTK::Roles::Properties;
+  also does GLib::Roles::Object;
 
   has TeplFile $!tf;
 
   submethod BUILD (:$file) {
-    self!setObject($!tf = $file);                 # GTK::Roles::Properties
+    self!setObject($!tf = $file);                 # GLib::Roles::Object
   }
 
-  method TEPL::Raw::Types::TeplFile { $!tf }
+  method TEPL::Raw::Types::TeplFile
+    is also<TeplFile>
+  { $!tf }
 
   multi method new (TeplFile $file) {
-    self.bless(:$file);
+    $file ?? self.bless(:$file) !! Nil;
   }
   multi method new {
-    self.bless( file => tepl_file_new() );
+    my $file = tepl_file_new();
+
+    $file ?? self.bless(:$file) !! Nil;
   }
 
   method location is rw {
     Proxy.new:
-      FETCH => -> $               { self.get_location      },
+      FETCH => sub ($)            { self.get_location      },
       STORE => -> $, GFile() \val { self.set_location(val) };
   }
 
@@ -54,30 +55,45 @@ class TEPL::File {
       compression-type
     >
   {
-    TeplCompressionType( tepl_file_get_compression_type($!tf) );
+    TeplCompressionTypeEnum( tepl_file_get_compression_type($!tf) );
   }
 
-  method get_encoding
+  method get_encoding (:$raw = False)
     is also<
       get-encoding
       encoding
     >
   {
-    TEPL::Encoding.new( tepl_file_get_encoding($!tf) );
+    my $e = tepl_file_get_encoding($!tf);
+
+    $e ??
+      ( $raw ?? $e !! TEPL::Encoding.new($e) )
+      !!
+      TeplEncoding;
   }
 
-  method get_file_metadata
+  method get_file_metadata (:$raw = False)
     is also<
       get-file-metadata
       file_metadata
       file-metadata
     >
   {
-    TEPL::FileMetadata.new( tepl_file_get_file_metadata($!tf) );
+    my $fm = tepl_file_get_file_metadata($!tf);
+
+    $fm ??
+      ( $raw ?? $fm !! TEPL::FileMetadata.new($fm) )
+      !!
+      TeplFileMetadata;
   }
 
-  method get_location is also<get-location> {
-    GIO::Roles::GFile.new( tepl_file_get_location($!tf) );
+  method get_location (:$raw = False) is also<get-location> {
+    my $f = tepl_file_get_location($!tf);
+
+    $f ??
+      ( $raw ?? $f !! GIO::Roles::GFile.new-file-obj($f) )
+      !!
+      GFile;
   }
 
   method get_newline_type
@@ -87,7 +103,7 @@ class TEPL::File {
       newline-type
     >
   {
-    TeplNewlineType( tepl_file_get_newline_type($!tf) );
+    TeplNewlineTypeEnum( tepl_file_get_newline_type($!tf) );
   }
 
   method get_short_name
