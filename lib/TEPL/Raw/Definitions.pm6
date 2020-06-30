@@ -9,7 +9,7 @@ unit package TEPL::Raw::Definitions;
 constant tepl is export = 'tepl-4',v0;
 
 # Number of times a full project compilation has had to be forced.
-constant forced = 8;
+my constant forced = 12;
 
 class TeplAbstractFactory     is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplApplication         is repr<CPointer> does GLib::Roles::Pointers is export { }
