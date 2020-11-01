@@ -136,9 +136,9 @@ class TEPL::Encoding {
 
 }
 
-sub infix:<=:=> (TEPL::Encoding $a, TEPL::Encoding $b) is export {
-  $a.TeplEncoding.p == $b.TeplEncoding.p
+multi sub infix:<=:=> (TEPL::Encoding $a, TEPL::Encoding $b) is export {
+  +$a.TeplEncoding.p == +$b.TeplEncoding.p
 }
-sub infix:<eqv> (TeplEncoding $a, TeplEncoding $b) is export {
+multi sub infix:<eqv> (TeplEncoding $a, TeplEncoding $b) is export {
   so tepl_encoding_equals($a, $b);
 }
