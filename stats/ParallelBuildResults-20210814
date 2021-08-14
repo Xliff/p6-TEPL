@@ -1,0 +1,1389 @@
+ === GIO::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   5.817
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.009
+Stage mast       :   0.029
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GIO::Raw::Exports compile time: 7.21427021
+ === Cairo === 
+Stage start      :   0.000
+Stage parse      :   6.275
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.008
+Stage mbc        :   0.012
+Stage moar       :   0.000
+
+Cairo compile time: 7.45236147
+ === GDK::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   6.382
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GDK::Raw::Definitions compile time: 7.4876314
+ === GLib::Raw::Exceptions === 
+Stage start      :   0.000
+Stage parse      :   5.713
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.022
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GLib::Raw::Exceptions compile time: 7.23656986
+ === GDK::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   6.272
+Stage syntaxcheck:   0.003
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.037
+Stage mbc        :   0.007
+Stage moar       :   0.000
+
+GDK::Raw::Exports compile time: 7.54168602
+ === GIO::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   6.301
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.016
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GIO::Raw::Enums compile time: 7.77876122
+ === GDK::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   6.765
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.030
+Stage moar       :   0.000
+
+GDK::Raw::Subs compile time: 7.9362022
+ === GIO::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   6.510
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.003
+Stage mast       :   0.007
+Stage mbc        :   0.013
+Stage moar       :   0.000
+
+GIO::Raw::Definitions compile time: 7.9407539
+ === GDK::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   6.803
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.015
+Stage mast       :   0.026
+Stage mbc        :   0.006
+Stage moar       :   0.000
+
+GDK::Raw::Enums compile time: 8.0822761
+ === AMTK::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   6.966
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+AMTK::Raw::Definitions compile time: 8.33083725
+ === GLib::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   6.720
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GLib::Raw::Exports compile time: 8.1764518
+ === GDK::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   7.095
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.007
+Stage mast       :   0.008
+Stage mbc        :   0.009
+Stage moar       :   0.000
+
+GDK::Raw::Structs compile time: 8.5401306
+ === GIO::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   7.247
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.009
+Stage moar       :   0.000
+
+GIO::Raw::Subs compile time: 8.55008589
+ === GLib::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   6.872
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.008
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GLib::Raw::Definitions compile time: 8.6199849
+ === GIO::DBus::Raw::Types === 
+Stage start      :   0.000
+Stage parse      :   7.514
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.068
+Stage mast       :   0.021
+Stage mbc        :   0.006
+Stage moar       :   0.000
+
+GIO::DBus::Raw::Types compile time: 8.87996339
+ === GIO::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   7.577
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.009
+Stage moar       :   0.000
+
+GIO::Raw::Structs compile time: 8.84370253
+ === GLib::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   7.438
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.009
+Stage mast       :   0.066
+Stage mbc        :   0.007
+Stage moar       :   0.000
+
+GLib::Raw::Enums compile time: 9.2593011
+ === GIO::Raw::Quarks === 
+Stage start      :   0.000
+Stage parse      :   7.734
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GIO::Raw::Quarks compile time: 9.59209062
+ === GIO::Roles::GFile === 
+Stage start      :   0.000
+Stage parse      :  11.817
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.040
+Stage moar       :   0.000
+
+GIO::Roles::GFile compile time: 13.49877299
+ === GLib::Raw::Struct_Subs === 
+Stage start      :   0.000
+Stage parse      :   7.066
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.031
+Stage moar       :   0.000
+
+GLib::Raw::Struct_Subs compile time: 8.97802035
+ === GLib::Raw::Object === 
+Stage start      :   0.000
+Stage parse      :   7.845
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.021
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GLib::Raw::Object compile time: 9.60257766
+ === GLib::Roles::Pointers === 
+Stage start      :   0.000
+Stage parse      :   7.055
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GLib::Roles::Pointers compile time: 9.09391667
+ === GLib::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   7.959
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.021
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GLib::Raw::Subs compile time: 9.775689
+ === GLib::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   8.203
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.004
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+GLib::Raw::Structs compile time: 10.119142
+ === GLib::Value === 
+Stage start      :   0.000
+Stage parse      :   8.059
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.014
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GLib::Value compile time: 10.04996429
+ === GLib::Roles::ListData === 
+Stage start      :   0.000
+Stage parse      :   8.358
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GLib::Roles::ListData compile time: 10.57021261
+ === GLib::Roles::StaticClass === 
+Stage start      :   0.000
+Stage parse      :   8.439
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GLib::Roles::StaticClass compile time: 10.49327309
+ === GTK::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   6.588
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.005
+Stage mast       :   0.027
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+GTK::Raw::Exports compile time: 8.73081267
+ === GLib::Roles::Object === 
+Stage start      :   0.000
+Stage parse      :   8.827
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.018
+Stage moar       :   0.000
+
+GLib::Roles::Object compile time: 10.73277005
+ === GTK::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   7.978
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.031
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+GTK::Raw::Definitions compile time: 9.83301274
+ === GTK::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   8.062
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.025
+Stage mast       :   0.060
+Stage mbc        :   0.009
+Stage moar       :   0.000
+
+GTK::Raw::Enums compile time: 10.06410829
+ === GTK::Raw::Requisition === 
+Stage start      :   0.000
+Stage parse      :   8.527
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.006
+Stage mbc        :   0.023
+Stage moar       :   0.000
+
+GTK::Raw::Requisition compile time: 10.44890931
+ === AMTK === 
+Stage start      :   0.000
+Stage parse      :  23.677
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.117
+Stage moar       :   0.000
+
+AMTK compile time: 25.16385946
+ === GTK::Label === 
+Stage start      :   0.000
+Stage parse      :  15.720
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.007
+Stage mbc        :   0.042
+Stage moar       :   0.000
+
+GTK::Label compile time: 17.42288666
+ === GTK::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   7.718
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+GTK::Raw::Subs compile time: 9.6072205
+ === Method::Also === 
+Stage start      :   0.000
+Stage parse      :   6.655
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.002
+Stage mast       :   0.009
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+Method::Also compile time: 8.58919014
+ === Pango::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   6.241
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.004
+Stage mast       :   0.022
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+Pango::Raw::Exports compile time: 8.42979994
+ === GTK::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   8.902
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.008
+Stage mbc        :   0.005
+Stage moar       :   0.000
+
+GTK::Raw::Structs compile time: 10.81951846
+ === GTK::Grid === 
+Stage start      :   0.000
+Stage parse      :  16.925
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.047
+Stage moar       :   0.000
+
+GTK::Grid compile time: 18.86044186
+ === GTK::InfoBar === 
+Stage start      :   0.000
+Stage parse      :  16.823
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.038
+Stage moar       :   0.000
+
+GTK::InfoBar compile time: 18.78920909
+ === GTK::Notebook === 
+Stage start      :   0.000
+Stage parse      :  16.675
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.011
+Stage mbc        :   0.068
+Stage moar       :   0.000
+
+GTK::Notebook compile time: 18.70578458
+ === Pango::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   7.399
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+Pango::Raw::Definitions compile time: 9.235159
+ === GTK::ApplicationWindow === 
+Stage start      :   0.000
+Stage parse      :  17.168
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.041
+Stage moar       :   0.000
+
+GTK::ApplicationWindow compile time: 19.25288474
+ === GTK::Application === 
+Stage start      :   0.000
+Stage parse      :  18.124
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.053
+Stage moar       :   0.000
+
+GTK::Application compile time: 20.0430234
+ === Pango::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   7.549
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.018
+Stage moar       :   0.000
+
+Pango::Raw::Enums compile time: 9.80453786
+ === Pango::Raw::Structs === 
+Stage start      :   0.000
+Stage parse      :   7.690
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+Pango::Raw::Structs compile time: 9.54774323
+ === Pango::Raw::Subs === 
+Stage start      :   0.000
+Stage parse      :   7.530
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+Pango::Raw::Subs compile time: 9.36825498
+ === GTK::Roles::Signals::Generic === 
+Stage start      :   0.000
+Stage parse      :  10.148
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.006
+Stage moar       :   0.000
+
+GTK::Roles::Signals::Generic compile time: 12.1764137
+ === SourceViewGTK::Raw::Definitions === 
+Stage start      :   0.000
+Stage parse      :   4.710
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Definitions compile time: 6.51946726
+ === SourceViewGTK::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   3.745
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.005
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Exports compile time: 5.41301069
+ === SourceViewGTK::Raw::Enums === 
+Stage start      :   0.000
+Stage parse      :   4.074
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.060
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+SourceViewGTK::Raw::Enums compile time: 5.92340275
+ === GTK::TextBuffer === 
+Stage start      :   0.000
+Stage parse      :  13.063
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.019
+Stage moar       :   0.000
+
+GTK::TextBuffer compile time: 15.0051648
+ === GTK::WindowGroup === 
+Stage start      :   0.000
+Stage parse      :  12.279
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.013
+Stage moar       :   0.000
+
+GTK::WindowGroup compile time: 14.22224461
+ === GTK::TextIter === 
+Stage start      :   0.000
+Stage parse      :  12.757
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.022
+Stage moar       :   0.000
+
+GTK::TextIter compile time: 14.79955661
+ === TEPL::Raw::Definitions === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Definitions.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.522
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.006
+    Stage mast       :   0.050
+    Stage mbc        :   0.006
+Stage parse      :   6.925
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.005
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::Definitions compile time: 8.43676621
+ === SourceViewGTK::Buffer === 
+Stage start      :   0.000
+Stage parse      :   9.730
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.020
+Stage moar       :   0.000
+
+SourceViewGTK::Buffer compile time: 11.5983145
+ === SourceViewGTK::View === 
+Stage start      :   0.000
+Stage parse      :  10.096
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.028
+Stage moar       :   0.000
+
+SourceViewGTK::View compile time: 11.70975795
+ === TEPL::Raw::Exports === 
+Stage start      :   0.000
+Stage parse      :   2.389
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.000
+Stage moar       :   0.000
+
+TEPL::Raw::Exports compile time: 2.98049229
+ === TEPL::Main === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Main.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.978
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.002
+    Stage mast       :   0.031
+    Stage mbc        :   0.004
+Stage parse      :   5.722
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Main compile time: 6.309542
+ === TEPL::Raw::Types === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Types.pm6
+    Stage start      :   0.000
+    Stage parse      :   4.182
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.001
+    Stage mast       :   0.022
+    Stage mbc        :   0.008
+Stage parse      :   7.104
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.012
+Stage mast       :   0.017
+Stage mbc        :   0.012
+Stage moar       :   0.000
+
+TEPL::Raw::Types compile time: 7.71921587
+ === TEPL::Utils === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Utils.pm6
+    Stage start      :   0.000
+    Stage parse      :   2.743
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.028
+    Stage mbc        :   0.021
+Stage parse      :   5.526
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Utils compile time: 6.0300365
+ === TEPL::Raw::View === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/View.pm6
+    Stage start      :   0.000
+    Stage parse      :   3.153
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.019
+    Stage mast       :   0.043
+    Stage mbc        :   0.027
+Stage parse      :   5.939
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::View compile time: 6.45391437
+ === TEPL::MetadataManager === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/MetadataManager.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.485
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.054
+    Stage mast       :   0.079
+    Stage mbc        :   0.058
+Stage parse      :  16.433
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+TEPL::MetadataManager compile time: 17.65379942
+ === TEPL::Raw::TabLabel === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/TabLabel.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.121
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.074
+    Stage mast       :   0.089
+    Stage mbc        :   0.070
+Stage parse      :  16.190
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.011
+Stage mbc        :   0.004
+Stage moar       :   0.000
+
+TEPL::Raw::TabLabel compile time: 17.81406157
+ === TEPL::Raw::Application === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Application.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.946
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.098
+    Stage mast       :   0.159
+    Stage mbc        :   0.079
+Stage parse      :  16.808
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::Application compile time: 18.07319757
+ === TEPL::Raw::Buffer === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.238
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.085
+    Stage mast       :   0.182
+    Stage mbc        :   0.065
+Stage parse      :  16.672
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::Raw::Buffer compile time: 18.07182694
+ === TEPL::Raw::AbstractFactory === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/AbstractFactory.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.974
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.050
+    Stage mast       :   0.129
+    Stage mbc        :   0.062
+Stage parse      :  16.940
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.005
+Stage moar       :   0.000
+
+TEPL::Raw::AbstractFactory compile time: 18.18851251
+ === TEPL::Raw::Notebook === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Notebook.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.139
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.078
+    Stage mast       :   0.216
+    Stage mbc        :   0.032
+Stage parse      :  16.431
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::Raw::Notebook compile time: 18.0826391
+ === TEPL::Raw::FoldRegion === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/FoldRegion.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.368
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.086
+    Stage mast       :   0.173
+    Stage mbc        :   0.052
+Stage parse      :  16.831
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+TEPL::Raw::FoldRegion compile time: 18.44124006
+ === TEPL::Raw::FileMetadata === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/FileMetadata.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.490
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.067
+    Stage mast       :   0.138
+    Stage mbc        :   0.095
+Stage parse      :  17.492
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::Raw::FileMetadata compile time: 18.86004019
+ === TEPL::Raw::InfoBar === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/InfoBar.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.250
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.056
+    Stage mast       :   0.098
+    Stage mbc        :   0.069
+Stage parse      :  17.303
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+TEPL::Raw::InfoBar compile time: 18.8689472
+ === TEPL::Raw::TabGroup === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/TabGroup.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.639
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.059
+    Stage mast       :   0.110
+    Stage mbc        :   0.116
+Stage parse      :  17.527
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+TEPL::Raw::TabGroup compile time: 19.13646054
+ === TEPL::Raw::ApplicationWindow === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/ApplicationWindow.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.584
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.053
+    Stage mast       :   0.158
+    Stage mbc        :   0.094
+Stage parse      :  18.060
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+TEPL::Raw::ApplicationWindow compile time: 19.33774822
+ === TEPL::Raw::FileLoader === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/FileLoader.pm6
+    Stage start      :   0.000
+    Stage parse      :  10.193
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.074
+    Stage mast       :   0.158
+    Stage mbc        :   0.115
+Stage parse      :  18.375
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::Raw::FileLoader compile time: 19.6912358
+ === TEPL::Raw::Tab === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Tab.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.653
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.059
+    Stage mast       :   0.209
+    Stage mbc        :   0.120
+Stage parse      :  18.176
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+TEPL::Raw::Tab compile time: 19.6606825
+ === TEPL::Raw::Encoding === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :  10.525
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.066
+    Stage mast       :   0.120
+    Stage mbc        :   0.221
+Stage parse      :  18.423
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::Encoding compile time: 19.84028851
+ === TEPL::Raw::File === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/File.pm6
+    Stage start      :   0.000
+    Stage parse      :  10.282
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.048
+    Stage mast       :   0.080
+    Stage mbc        :   0.093
+Stage parse      :  18.321
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::File compile time: 19.91358182
+ === TEPL::Raw::FileSaver === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/FileSaver.pm6
+    Stage start      :   0.000
+    Stage parse      :  10.730
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.076
+    Stage mast       :   0.153
+    Stage mbc        :   0.094
+Stage parse      :  18.916
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+TEPL::Raw::FileSaver compile time: 20.40159821
+ === TEPL::GutterRendererFolds === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/GutterRendererFolds.pm6
+    Stage start      :   0.000
+    Stage parse      :  11.090
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.027
+    Stage mast       :   0.047
+    Stage mbc        :   0.043
+Stage parse      :  19.410
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::GutterRendererFolds compile time: 20.72585267
+ === TEPL::Encoding === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Encoding.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.606
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.036
+    Stage mast       :   0.123
+    Stage mbc        :   0.031
+Stage parse      :  11.453
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::Encoding compile time: 12.36783053
+ === TEPL::FileMetadata === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/FileMetadata.pm6
+    Stage start      :   0.000
+    Stage parse      :   6.957
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.080
+    Stage mbc        :   0.019
+Stage parse      :  12.229
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::FileMetadata compile time: 13.10719411
+ === TEPL::View === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/View.pm6
+    Stage start      :   0.000
+    Stage parse      :  24.365
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.026
+    Stage mast       :   0.519
+    Stage mbc        :   0.122
+Stage parse      :  35.957
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+TEPL::View compile time: 36.97222682
+ === TEPL::FileSaver === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/FileSaver.pm6
+    Stage start      :   0.000
+    Stage parse      :  10.289
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.036
+    Stage mast       :   0.101
+    Stage mbc        :   0.055
+Stage parse      :  15.806
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::FileSaver compile time: 16.65020954
+ === TEPL::ApplicationWindow === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/ApplicationWindow.pm6
+    Stage start      :   0.000
+    Stage parse      :  12.954
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.019
+    Stage mast       :   0.239
+    Stage mbc        :   0.080
+Stage parse      :  19.134
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::ApplicationWindow compile time: 20.30961843
+ === TEPL::InfoBar === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/InfoBar.pm6
+    Stage start      :   0.000
+    Stage parse      :  12.332
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.193
+    Stage mbc        :   0.060
+Stage parse      :  18.511
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::InfoBar compile time: 19.4841705
+ === TEPL::FoldRegion === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/FoldRegion.pm6
+    Stage start      :   0.000
+    Stage parse      :  12.884
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.211
+    Stage mbc        :   0.108
+Stage parse      :  19.025
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::FoldRegion compile time: 19.96649498
+ === TEPL::AbstractFactory === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/AbstractFactory.pm6
+    Stage start      :   0.000
+    Stage parse      :  14.968
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.243
+    Stage mbc        :   0.082
+Stage parse      :  21.731
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::AbstractFactory compile time: 22.91557606
+ === TEPL::Application === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Application.pm6
+    Stage start      :   0.000
+    Stage parse      :  18.265
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.034
+    Stage mast       :   0.321
+    Stage mbc        :   0.107
+Stage parse      :  25.540
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Application compile time: 26.79163802
+ === TEPL::File === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/File.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.133
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.062
+    Stage mbc        :   0.044
+Stage parse      :  11.653
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::File compile time: 12.43943066
+ === TEPL::Buffer === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Buffer.pm6
+    Stage start      :   0.000
+    Stage parse      :   8.951
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.017
+    Stage mast       :   0.184
+    Stage mbc        :   0.065
+Stage parse      :  13.412
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Buffer compile time: 13.95500774
+ === TEPL::FileLoader === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/FileLoader.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.413
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.015
+    Stage mast       :   0.191
+    Stage mbc        :   0.029
+Stage parse      :  10.081
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::FileLoader compile time: 10.60743194
+ === TEPL::Roles::TabGroup === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Roles/TabGroup.pm6
+    Stage start      :   0.000
+    Stage parse      :   5.491
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.029
+    Stage mast       :   0.298
+    Stage mbc        :   0.006
+Stage parse      :  11.235
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Roles::TabGroup compile time: 11.76791501
+ === TEPL::Tab === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Tab.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.462
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.034
+    Stage mast       :   0.280
+    Stage mbc        :   0.043
+Stage parse      :  15.175
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Tab compile time: 15.71750067
+ === TEPL::TabLabel === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/TabLabel.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.615
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.018
+    Stage mast       :   0.301
+    Stage mbc        :   0.046
+Stage parse      :  15.763
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::TabLabel compile time: 16.3051251
+ === TEPL::Notebook === 
+Stage start      :   0.000
+
+    precomp lib/TEPL/Notebook.pm6
+    Stage start      :   0.000
+    Stage parse      :   9.639
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.012
+    Stage mast       :   0.306
+    Stage mbc        :   0.047
+Stage parse      :  15.757
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Notebook compile time: 16.29018675
+
+Total compile time: 156.2308083s
