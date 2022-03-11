@@ -9,7 +9,7 @@ use GTK::InfoBar;
 use GTK::Label;
 
 our subset TeplInfoBarAncestry is export of Mu
-  where TeplInfoBar | InfoBarAncestry;
+  where TeplInfoBar | GtkInfoBarAncestry;
 
 class TEPL::InfoBar is GTK::InfoBar {
   has TeplInfoBar $!tib;
@@ -37,7 +37,7 @@ class TEPL::InfoBar is GTK::InfoBar {
         cast(TeplInfoBar, $_);
       }
     }
-    self.setInfoBar($to-parent);
+    self.setGtkInfoBar($to-parent);
   }
 
   method TEPL::Raw::Types::TeplInfoBar
