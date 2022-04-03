@@ -1,0 +1,904 @@
+
+Parallel build started for Raku 2022.03.125.g.94.f.2.ba.5.d.4 on MoarVM 2022.03.8.g.35453.e.9.e.1
+ === TEPL::Raw::Exports (1/39) === 
+
+Stage start      :   0.000
+Stage parse      :   3.023
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.005
+Stage mast       :   0.033
+Stage mbc        :   0.010
+Stage moar       :   0.000
+
+TEPL::Raw::Exports compile time: 4.765856
+ === TEPL::Raw::Definitions (2/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Definitions.pm6
+    Stage start      :   0.003
+    Stage parse      :   5.283
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.027
+    Stage mast       :   0.074
+    Stage mbc        :   0.021
+Stage parse      :   9.050
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.006
+Stage mast       :   0.028
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::Raw::Definitions compile time: 10.71911398
+ === TEPL::Main (3/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Main.pm6
+    Stage start      :   0.001
+    
+        load    lib/TEPL/Raw/Definitions.pm6
+    Stage parse      :   6.918
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.011
+    Stage mast       :   0.027
+    Stage mbc        :   0.009
+Stage parse      :  11.146
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Main compile time: 12.84790477
+ === TEPL::Raw::Types (4/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Types.pm6
+    Stage start      :   0.000
+    Stage parse      :   7.120
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.003
+    Stage mast       :   0.017
+    Stage mbc        :   0.006
+Stage parse      :  12.399
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.015
+Stage mast       :   0.019
+Stage mbc        :   0.010
+Stage moar       :   0.000
+
+TEPL::Raw::Types compile time: 14.0412915
+ === TEPL::Raw::AbstractFactory (5/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/AbstractFactory.pm6
+    Stage start      :   0.014
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :   8.359
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.016
+    Stage mast       :   0.040
+    Stage mbc        :   0.020
+Stage parse      :  13.318
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::AbstractFactory compile time: 14.99866342
+ === TEPL::Raw::FoldRegion (6/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/FoldRegion.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :   7.766
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.033
+    Stage mbc        :   0.019
+Stage parse      :  12.744
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::FoldRegion compile time: 14.99577523
+ === TEPL::GutterRendererFolds (7/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/GutterRendererFolds.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :   8.119
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.027
+    Stage mast       :   0.035
+    Stage mbc        :   0.013
+Stage parse      :  13.387
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::GutterRendererFolds compile time: 15.33684147
+ === TEPL::Utils (8/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Utils.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :   8.425
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.035
+    Stage mbc        :   0.013
+Stage parse      :  13.965
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Utils compile time: 15.58456858
+ === TEPL::Raw::FileMetadata (9/39) === 
+
+Stage start      :   0.001
+
+    precomp lib/TEPL/Raw/FileMetadata.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :   8.147
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.032
+    Stage mast       :   0.034
+    Stage mbc        :   0.029
+Stage parse      :  13.471
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::FileMetadata compile time: 15.66650138
+ === TEPL::Raw::View (10/39) === 
+
+Stage start      :   0.001
+
+    precomp lib/TEPL/Raw/View.pm6
+    Stage start      :   0.009
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :   8.868
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.028
+    Stage mbc        :   0.024
+Stage parse      :  14.188
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::View compile time: 16.33892966
+ === TEPL::Raw::FileSaver (11/39) === 
+
+Stage start      :   0.001
+
+    precomp lib/TEPL/Raw/FileSaver.pm6
+    Stage start      :   0.001
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :   9.703
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.029
+    Stage mast       :   0.036
+    Stage mbc        :   0.036
+Stage parse      :  14.811
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::FileSaver compile time: 16.87552589
+ === TEPL::MetadataManager (12/39) === 
+
+Stage start      :   0.002
+
+    precomp lib/TEPL/MetadataManager.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  10.071
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.026
+    Stage mbc        :   0.012
+Stage parse      :  15.398
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.013
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::MetadataManager compile time: 17.41955994
+ === TEPL::Raw::Encoding (13/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Encoding.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :   9.634
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.046
+    Stage mbc        :   0.039
+Stage parse      :  15.156
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.003
+Stage moar       :   0.000
+
+TEPL::Raw::Encoding compile time: 17.44084659
+ === TEPL::Raw::Application (14/39) === 
+
+Stage start      :   0.001
+
+    precomp lib/TEPL/Raw/Application.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  10.127
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.051
+    Stage mbc        :   0.040
+Stage parse      :  15.629
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::Application compile time: 17.70959334
+ === TEPL::Raw::FileLoader (15/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/FileLoader.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  10.731
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.034
+    Stage mast       :   0.037
+    Stage mbc        :   0.032
+Stage parse      :  16.275
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::FileLoader compile time: 18.3672896
+ === TEPL::Raw::ApplicationWindow (16/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/ApplicationWindow.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  11.211
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.046
+    Stage mbc        :   0.023
+Stage parse      :  16.573
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::ApplicationWindow compile time: 18.71772518
+ === TEPL::Raw::Buffer (17/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Buffer.pm6
+    Stage start      :   0.001
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  11.311
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.033
+    Stage mbc        :   0.022
+Stage parse      :  16.867
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::Buffer compile time: 19.00593382
+ === TEPL::Raw::Notebook (18/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/Notebook.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  11.135
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.019
+    Stage mast       :   0.041
+    Stage mbc        :   0.011
+Stage parse      :  16.403
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.016
+Stage mast       :   0.003
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::Notebook compile time: 19.058227
+ === TEPL::Raw::File (19/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/File.pm6
+    Stage start      :   0.008
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  11.958
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.029
+    Stage mast       :   0.042
+    Stage mbc        :   0.033
+Stage parse      :  17.610
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::Raw::File compile time: 19.67482419
+ === TEPL::Raw::Tab (20/39) === 
+
+Stage start      :   0.007
+
+    precomp lib/TEPL/Raw/Tab.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  11.958
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.036
+    Stage mbc        :   0.031
+Stage parse      :  17.682
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::Raw::Tab compile time: 19.98557645
+ === TEPL::Raw::InfoBar (21/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Raw/InfoBar.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  13.084
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.023
+    Stage mbc        :   0.023
+Stage parse      :  18.524
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::Raw::InfoBar compile time: 20.6301082
+ === TEPL::Raw::TabLabel (22/39) === 
+
+Stage start      :   0.001
+
+    precomp lib/TEPL/Raw/TabLabel.pm6
+    Stage start      :   0.001
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  12.475
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.029
+    Stage mast       :   0.029
+    Stage mbc        :   0.014
+Stage parse      :  18.068
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.017
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::Raw::TabLabel compile time: 20.58089062
+ === TEPL::Encoding (23/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Encoding.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  13.713
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.045
+    Stage mast       :   0.044
+    Stage mbc        :   0.019
+Stage parse      :  19.471
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.003
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::Encoding compile time: 22.08547814
+ === TEPL::Raw::TabGroup (24/39) === 
+
+Stage start      :   0.001
+
+    precomp lib/TEPL/Raw/TabGroup.pm6
+    Stage start      :   0.001
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  13.876
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.028
+    Stage mast       :   0.032
+    Stage mbc        :   0.023
+Stage parse      :  19.527
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Raw::TabGroup compile time: 22.34374835
+ === TEPL::FileMetadata (25/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/FileMetadata.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  14.334
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.030
+    Stage mast       :   0.045
+    Stage mbc        :   0.077
+Stage parse      :  20.009
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.004
+Stage mbc        :   0.002
+Stage moar       :   0.000
+
+TEPL::FileMetadata compile time: 22.90726835
+ === TEPL::FileSaver (26/39) === 
+
+Stage start      :   0.001
+
+    precomp lib/TEPL/FileSaver.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  15.380
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.041
+    Stage mast       :   0.069
+    Stage mbc        :   0.029
+Stage parse      :  21.330
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::FileSaver compile time: 23.52938701
+ === TEPL::AbstractFactory (27/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/AbstractFactory.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  15.846
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.029
+    Stage mast       :   0.128
+    Stage mbc        :   0.031
+Stage parse      :  22.519
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::AbstractFactory compile time: 24.66818458
+ === TEPL::File (28/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/File.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/File.pm6
+    
+        load    lib/TEPL/Encoding.pm6
+    
+        load    lib/TEPL/FileMetadata.pm6
+    Stage parse      :  13.249
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.027
+    Stage mast       :   0.043
+    Stage mbc        :   0.024
+Stage parse      :  19.309
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::File compile time: 21.9116186
+ === TEPL::FoldRegion (29/39) === 
+
+Stage start      :   0.001
+
+    precomp lib/TEPL/FoldRegion.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  18.050
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.022
+    Stage mast       :   0.096
+    Stage mbc        :   0.024
+Stage parse      :  24.300
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::FoldRegion compile time: 26.60883635
+ === TEPL::InfoBar (30/39) === 
+
+Stage start      :   0.004
+
+    precomp lib/TEPL/InfoBar.pm6
+    Stage start      :   0.001
+    
+        load    lib/TEPL/Raw/Types.pm6
+    
+        load    lib/TEPL/Raw/InfoBar.pm6
+    Stage parse      :  17.997
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.027
+    Stage mast       :   0.102
+    Stage mbc        :   0.021
+Stage parse      :  24.319
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::InfoBar compile time: 26.65905306
+ === TEPL::ApplicationWindow (31/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/ApplicationWindow.pm6
+    Stage start      :   0.001
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  17.624
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.023
+    Stage mast       :   0.104
+    Stage mbc        :   0.022
+Stage parse      :  24.238
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::ApplicationWindow compile time: 26.82282317
+ === TEPL::View (32/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/View.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    Stage parse      :  18.893
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.027
+    Stage mast       :   0.202
+    Stage mbc        :   0.041
+Stage parse      :  26.500
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.001
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::View compile time: 28.52547174
+ === TEPL::Buffer (33/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Buffer.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Buffer.pm6
+    
+        load    lib/TEPL/File.pm6
+    Stage parse      :  12.862
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.140
+    Stage mbc        :   0.037
+Stage parse      :  15.864
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Buffer compile time: 17.92653133
+ === TEPL::Application (34/39) === 
+
+Stage start      :   0.001
+
+    precomp lib/TEPL/Application.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Types.pm6
+    
+        load    lib/TEPL/Raw/Application.pm6
+    Stage parse      :  18.990
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.183
+    Stage mbc        :   0.045
+Stage parse      :  26.376
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Application compile time: 28.47759693
+ === TEPL::FileLoader (35/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/FileLoader.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/FileLoader.pm6
+    
+        load    lib/TEPL/Buffer.pm6
+    Stage parse      :  14.407
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.025
+    Stage mast       :   0.121
+    Stage mbc        :   0.018
+Stage parse      :  17.312
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::FileLoader compile time: 17.78895386
+ === TEPL::Roles::TabGroup (36/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Roles/TabGroup.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/TabGroup.pm6
+    
+        load    lib/TEPL/View.pm6
+    Stage parse      :  13.033
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.039
+    Stage mast       :   0.201
+    Stage mbc        :   0.010
+Stage parse      :  17.134
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.002
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Roles::TabGroup compile time: 17.73079142
+ === TEPL::Tab (37/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Tab.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/Tab.pm6
+    
+        load    lib/TEPL/Buffer.pm6
+    Stage parse      :  13.226
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.027
+    Stage mast       :   0.199
+    Stage mbc        :   0.026
+Stage parse      :  17.576
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Tab compile time: 18.27694797
+ === TEPL::TabLabel (38/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/TabLabel.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Raw/TabLabel.pm6
+    
+        load    lib/TEPL/Tab.pm6
+    Stage parse      :  15.573
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.020
+    Stage mast       :   0.188
+    Stage mbc        :   0.023
+Stage parse      :  19.699
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::TabLabel compile time: 20.46748365
+ === TEPL::Notebook (39/39) === 
+
+Stage start      :   0.000
+
+    precomp lib/TEPL/Notebook.pm6
+    Stage start      :   0.000
+    
+        load    lib/TEPL/Roles/TabGroup.pm6
+    Stage parse      :  16.427
+    Stage syntaxcheck:   0.000
+    Stage ast        :   0.000
+    Stage optimize   :   0.024
+    Stage mast       :   0.193
+    Stage mbc        :   0.024
+Stage parse      :  20.596
+Stage syntaxcheck:   0.000
+Stage ast        :   0.000
+Stage optimize   :   0.000
+Stage mast       :   0.001
+Stage mbc        :   0.001
+Stage moar       :   0.000
+
+TEPL::Notebook compile time: 21.29307213
+
+Total compile time: 36.709792s
