@@ -52,10 +52,21 @@ class TEPL::GotoLineBar is GTK::Grid {
     $o.ref if $ref;
     $o;
   }
-  method new {
+  multi method new ( *%a ) {
     my $tepl-goto-bar = tepl_goto_line_bar_new();
 
-    $tepl-goto-bar ?? self.bless( :$tepl-goto-bar ) !! Nil;
+    my $o = $tepl-goto-bar ?? self.bless( :$tepl-goto-bar ) !! Nil;
+    for %a.keys {
+      given .key {
+        when 'tepl_view' | 'tepl-view' | 'view' { $o.set_tab_view(  .value ) }
+
+        default {
+          say "Invalid attribute '{ .key }' for GotoLineBar.{
+               '' } Ignored!"
+        }
+      }
+    }
+    $o;
   }
 
   method get_type is also<get-type> {
