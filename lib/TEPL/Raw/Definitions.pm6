@@ -6,10 +6,14 @@ use GLib::Raw::Definitions;
 
 unit package TEPL::Raw::Definitions;
 
-constant tepl is export = 'tepl-4',v0;
+# cw: Groovy era definition
+#constant tepl         is export = 'tepl-4',v0;
+
+constant tepl         is export = 'tepl-6',v2;
+constant tepl-version is export = tepl.head.split('-').tail.Num;
 
 # Number of times a full project compilation has had to be forced.
-my constant forced = 32;
+my constant forced = 108;
 
 class TeplAbstractFactory     is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplApplication         is repr<CPointer> does GLib::Roles::Pointers is export { }
