@@ -6,12 +6,14 @@ use NativeCall;
 
 use TEPL::Raw::Types;
 
+use GTK::Grid;
+
 use GLib::Roles::Implementor;
 
 our subset TeplGotoLineBarAncestry is export of Mu
   where TeplGotoLineBar | GtkGridAncestry;
 
-class TEPL::GotoLineBar {
+class TEPL::GotoLineBar is GTK::Grid {
   has TeplGotoLineBar $!t-glb is implementor;
 
   submethod BUILD ( :$tepl-goto-bar ) {
@@ -41,7 +43,7 @@ class TEPL::GotoLineBar {
 
   multi method new (
      $tepl-goto-bar where * ~~ TeplGotoLineBarAncestry,
-     
+
     :$ref = True
   ) {
     return unless $tepl-goto-bar;
