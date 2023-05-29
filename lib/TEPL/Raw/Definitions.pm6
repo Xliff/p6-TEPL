@@ -31,6 +31,7 @@ class TeplGutterRendererFolds is repr<CPointer> does GLib::Roles::Pointers is ex
 class TeplInfoBar             is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplLineColumnIndicator is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplNotebook            is repr<CPointer> does GLib::Roles::Pointers is export { }
+class TeplSpaceDrawerPrefs    is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplTab                 is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplTabGroup            is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplTabLabel            is repr<CPointer> does GLib::Roles::Pointers is export { }
