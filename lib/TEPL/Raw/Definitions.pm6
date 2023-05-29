@@ -26,6 +26,7 @@ class TeplFileLoadfer         is repr<CPointer> does GLib::Roles::Pointers is ex
 class TeplFileMetadata        is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplFileSaver           is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplFoldRegion          is repr<CPointer> does GLib::Roles::Pointers is export { }
+class TeplGotoLineBar         is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplGutterRendererFolds is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplInfoBar             is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplNotebook            is repr<CPointer> does GLib::Roles::Pointers is export { }
