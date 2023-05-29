@@ -53,7 +53,7 @@ class TEPL::View is SourceViewGTK::View {
     return Nil unless $view;
 
     my $o = self.bless(:$view);
-    $o.upref if $ref;
+    $o.ref if $ref;
     $o;
   }
   multi method new {
