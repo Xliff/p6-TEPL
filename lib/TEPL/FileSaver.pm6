@@ -148,33 +148,45 @@ class TEPL::FileSaver {
     is also<save-async>
   { * }
 
+  multi method save_async (|c) {
+    if tepl-version < 5 {
+      samewith( |c, :pre5 );
+    } else {
+      samewith( |c, :post5 );
+    }
+  }
+
+  constant DN = %DEFAULT-CALLBACKS<GDestroyNotify>;
+
   multi method save_async (
-    Int() $io_priority,
-    &callback,
-    &progress_callback                       = Callable,
-    GCancellable() $cancellable              = GCancellable,
-    GDestroyNotify $progress_callback_notify = Pointer,
-    gpointer $progress_callback_data         = Pointer,
-    gpointer $user_data                      = Pointer
+    Int()           $io_priority,
+                    &callback,
+                    &progress_callback                    = Callable,
+    GCancellable()  $cancellable                          = GCancellable,
+                    &progress_callback_notify             = DN,
+    gpointer        $progress_callback_data               = Pointer,
+    gpointer        $user_data                            = Pointer,
+                   :$pre5                     is required
   ) {
     samewith (
       $io_priority,
       $cancellable,
       &progress_callback,
       $progress_callback_data,
-      $progress_callback_notify,
+      &progress_callback_notify,
       &callback,
       $user_data
     );
   }
   multi method save_async (
-    Int()                 $io_priority,
-    GCancellable()        $cancellable,
-                          &progress_callback,
-    gpointer              $progress_callback_data,
-    GDestroyNotify        $progress_callback_notify,
-                          &callback,
-    gpointer              $user_data
+    Int()           $io_priority,
+    GCancellable()  $cancellable,
+                    &progress_callback,
+    gpointer        $progress_callback_data,
+                    &progress_callback_notify,
+                    &callback,
+    gpointer        $user_data,
+                   :$pre5                     is required
   ) {
     my gint $io = $io_priority;
 
@@ -184,7 +196,7 @@ class TEPL::FileSaver {
       $cancellable,
       &progress_callback,
       $progress_callback_data,
-      $progress_callback_notify,
+      &progress_callback_notify,
       &callback,
       $user_data
     );
