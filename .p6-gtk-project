@@ -1,3 +1,5 @@
 prefix=TEPL
 modules=TEPL::Raw::Types,GTK::Raw::Types,GTK::Compat::Types
 backups=backup,bitbucket
+include-directory=/usr/src/tepl-6.4.0/tepl
+lib=tepl
