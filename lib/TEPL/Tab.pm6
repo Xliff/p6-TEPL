@@ -116,7 +116,12 @@ class TEPL::Tab is GTK::Grid {
     unstable_get_type( self.^name, &tepl_tab_get_type, $n, $t );
   }
 
-  method get_view (:$raw = False) is also<get-view> {
+  method get_view (:$raw = False)
+    is also<
+      get-view
+      view
+    >
+  {
     my $tv = tepl_tab_get_view($!tt);
 
     $tv ??
