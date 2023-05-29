@@ -2,9 +2,13 @@ use v6.c;
 
 use NativeCall;
 
-use TEPL::Raw::Types;
+use GLib::Raw::Definitions;
+use GIO::Raw::Definitions;
+use TEPL::Raw::Definitions;
 
 unit package TEPL::Raw::File;
+
+### /usr/src/tepl/tepl/tepl-file.H
 
 # Semi-private files listed in header, but not accessible to NativeCall
 #
@@ -72,68 +76,68 @@ sub tepl_file_check_file_on_disk (TeplFile $file)
 
 sub tepl_file_get_compression_type (TeplFile $file)
   returns uint32 # TeplCompressionType
-  is native(tepl)
-  is export
+  is      native(tepl)
+  is      export
 { * }
 
 sub tepl_file_get_encoding (TeplFile $file)
   returns TeplEncoding
-  is native(tepl)
-  is export
+  is      native(tepl)
+  is      export
 { * }
 
 sub tepl_file_get_file_metadata (TeplFile $file)
   returns TeplFileMetadata
-  is native(tepl)
-  is export
+  is      native(tepl)
+  is      export
 { * }
 
 sub tepl_file_get_location (TeplFile $file)
   returns GFile
-  is native(tepl)
-  is export
+  is      native(tepl)
+  is      export
 { * }
 
 sub tepl_file_get_newline_type (TeplFile $file)
   returns uint32 # TeplNewlineType
-  is native(tepl)
-  is export
+  is      native(tepl)
+  is      export
 { * }
 
 sub tepl_file_get_short_name (TeplFile $file)
   returns Str
-  is native(tepl)
-  is export
+  is      native(tepl)
+  is      export
 { * }
 
 sub tepl_file_is_deleted (TeplFile $file)
   returns uint32
-  is native(tepl)
-  is export
+  is      native(tepl)
+  is      export
 { * }
 
 sub tepl_file_is_externally_modified (TeplFile $file)
   returns uint32
-  is native(tepl)
-  is export
+  is      native(tepl)
+  is      export
 { * }
 
 sub tepl_file_is_local (TeplFile $file)
   returns uint32
-  is native(tepl)
-  is export
+  is      native(tepl)
+  is      export
 { * }
 
 sub tepl_file_is_readonly (TeplFile $file)
   returns uint32
-  is native(tepl)
-  is export
+  is      native(tepl)
+  is      export
 { * }
 
 sub tepl_file_new ()
   returns TeplFile
-  is native(tepl)
-  is export
+  is      native(tepl)
+  is      export
 { * }
 
 sub tepl_file_set_location (TeplFile $file, GFile $location)
@@ -143,9 +147,9 @@ sub tepl_file_set_location (TeplFile $file, GFile $location)
 
 sub tepl_file_set_mount_operation_factory (
   TeplFile $file,
-  &callback (TeplFile, Pointer --> GMountOperation),
+           &callback (TeplFile, Pointer --> GMountOperation),
   gpointer $user_data,
-  GDestroyNotify $notify
+           &notify (gpointer)
 )
   is native(tepl)
   is export
