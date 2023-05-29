@@ -146,51 +146,93 @@ class TEPL::FileLoader {
     is also<load-async>
   { * }
 
+  multi method load_async (|p) {
+    if tepl-version < 5 {
+      samewith( |p, :pre5 );
+    } else {
+      samewith( |p, :post5 );
+    }
+  }
+  constant DN = %DEFAULT-CALLBACKS<GDestroyNotify>;
   multi method load_async (
-    Int() $io_priority,
-    &callback,
-    &progress_callback                       = Callable,
-    gpointer $user_data                      = Pointer,
-    gpointer $progress_callback_data         = Pointer,
-    GCancellable() $cancellable              = GCancellable,
-    GDestroyNotify $progress_callback_notify = Pointer
+                    &callback,
+    gpointer        $user_data                            = Pointer,
+    Int()          :priority(:$io_priority)               = G_PRIORITY_DEFAULT,
+    gpointer       :$progress_callback_data               = Pointer,
+    GCancellable() :$cancellable                          = GCancellable,
+                   :&progress_callback                    = Callable,
+                   :&progress_callback_notify             = DN,
+                   :$pre5                     is required
+
   ) {
     samewith(
       $io_priority,
       $cancellable,
       &progress_callback,
       $progress_callback_data,
-      $progress_callback_notify,
+      &progress_callback_notify,
       &callback,
       $user_data
     );
   }
   multi method load_async (
-    Int() $io_priority,
-    GCancellable() $cancellable,
-    &progress_callback,
-    gpointer $progress_callback_data,
-    GDestroyNotify $progress_callback_notify,
-    &callback,
-    gpointer $user_data
+    Int()           $io_priority,
+    GCancellable()  $cancellable,
+                    &progress_callback,
+    gpointer        $progress_callback_data,
+                    &progress_callback_notify,
+                    &callback,
+    gpointer        $user_data,
+                   :$pre5                       is required
   ) {
     my guint $io = $io_priority;
-    
+
     tepl_file_loader_load_async(
       $!fl,
       $io,
       $cancellable,
       &progress_callback,
       $progress_callback_data,
-      $progress_callback_notify,
+      &progress_callback_notify,
+      &callback,
+      $user_data
+    );
+  }
+  multi method load_async (
+                     &callback,
+    gpointer         $user_data                          = gpointer,
+    Int()           :priority(:$io_priority)             = G_PRIORITY_DEFAULT,
+    GCancellable()  :$cancellable                        = GCancellable,
+                    :$post5                  is required
+  ) {
+    samewith(
+      $io_priority,
+      $cancellable,
+      &callback,
+      $user_data
+    )
+  }
+  multi method load_async (
+    Int()           $io_priority,
+    GCancellable()  $cancellable,
+                    &callback,
+    gpointer        $user_data,
+                   :$post5        is required
+  ) {
+    my guint $io = $io_priority;
+
+    tepl_file_loader_load_async(
+      $!fl,
+      $io,
+      $cancellable,
       &callback,
       $user_data
     );
   }
 
   method load_finish (
-    GAsyncResult() $result,
-    CArray[Pointer[GError]] $error = gerror()
+    GAsyncResult()          $result,
+    CArray[Pointer[GError]] $error   = gerror()
   )
     is also<load-finish>
   {
@@ -199,6 +241,5 @@ class TEPL::FileLoader {
     set_error($error);
     $rc;
   }
-
 
 }
