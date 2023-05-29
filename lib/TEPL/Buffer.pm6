@@ -20,8 +20,8 @@ class TEPL::Buffer is SourceViewGTK::Buffer {
     $o;
   }
 
-  submethod BUILD (:$buffer) {
-    given $buffer {
+  submethod BUILD ( :$tepl-buffer ) {
+    given $tepl-buffer {
       when TeplBufferAncestry {
         my $to-parent;
         $!tb = do {
@@ -35,7 +35,7 @@ class TEPL::Buffer is SourceViewGTK::Buffer {
             cast(TeplBuffer, $_);
           }
         }
-        self.setSourceBuffer($to-parent);
+        self.setGtkSourceBuffer($to-parent);
       }
 
       when SourceViewGTK::Buffer {
@@ -50,17 +50,17 @@ class TEPL::Buffer is SourceViewGTK::Buffer {
     is also<TeplBuffer>
   { $!tb }
 
-  multi method new(TeplBufferAncestry $buffer, :$ref = True) {
-    return Nil unless $buffer;
+  multi method new(TeplBufferAncestry $tepl-buffer, :$ref = True) {
+    return Nil unless $tepl-buffer;
 
-    my $o = self.bless($buffer);
+    my $o = self.bless( :$tepl-buffer );
     $o.ref if $ref;
     $o;
   }
   multi method new {
-    my $buffer = tepl_buffer_new();
+    my $tepl-buffer = tepl_buffer_new();
 
-    $buffer ?? self.bless(:$buffer) !! Nil;
+    $tepl-buffer ?? self.bless( :$tepl-buffer ) !! Nil;
   }
 
   method get_file (:$raw = False)
