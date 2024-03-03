@@ -13,7 +13,7 @@ constant tepl         is export = 'tepl-6',v2;
 constant tepl-version is export = tepl.head.split('-').tail.Num;
 
 # Number of times a full project compilation has had to be forced.
-my constant forced = 108;
+my constant forced = 175;
 
 class TeplAbstractFactory     is repr<CPointer> does GLib::Roles::Pointers is export { }
 class TeplApplication         is repr<CPointer> does GLib::Roles::Pointers is export { }

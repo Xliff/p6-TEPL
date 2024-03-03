@@ -10,7 +10,7 @@ use TEPL::Roles::TabGroup;
 use GTK::Notebook;
 
 our subset TeplNotebookAncestry is export
-  where TeplNotebook | TeplTabGroup | NotebookAncestry;
+  where TeplNotebook | TeplTabGroup | GtkNotebookAncestry;
 
 class TEPL::Notebook is GTK::Notebook {
   also does TEPL::Roles::TabGroup;
@@ -45,7 +45,7 @@ class TEPL::Notebook is GTK::Notebook {
           }
         };
         $!ttg //= cast(TeplTabGroup, $!tn);       # TEPL::Roles::TabGroup
-        self.setNotebook($to-parent);
+        self.setGtkNotebook($to-parent);
       }
 
       when TEPL::Notebook {
